@@ -14,13 +14,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="310">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#111#112#0" expanded="true" />
-                <element signature="e#146#147#0" expanded="true" />
+                <element signature="e#151#152#0" expanded="true" />
                 <element signature="e#215#216#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
+                <element signature="e#256#257#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,6 +35,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -44,34 +47,20 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="591" />
-    <option name="y" value="-986" />
+    <option name="x" value="831" />
+    <option name="y" value="-1011" />
     <option name="width" value="1680" />
     <option name="height" value="957" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Magic Calculator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Magic Calculator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Magic Calculator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Magic Calculator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -124,17 +113,18 @@
       <workItem from="1550180426617" duration="191000" />
       <workItem from="1550180664144" duration="38000" />
       <workItem from="1550181270413" duration="7418000" />
+      <workItem from="1550442594942" duration="801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12546000" />
+    <option name="totallyTimeSpent" value="13347000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="591" y="-986" width="1680" height="957" extended-state="0" />
+    <frame x="719" y="-1046" width="1680" height="957" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12820514" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12942614" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -172,13 +162,13 @@
     <entry file="file://$PROJECT_DIR$/src/Number.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="310">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#111#112#0" expanded="true" />
-            <element signature="e#146#147#0" expanded="true" />
+            <element signature="e#151#152#0" expanded="true" />
             <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
           </folding>
         </state>
       </provider>
