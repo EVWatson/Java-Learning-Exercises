@@ -14,8 +14,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="209">
+              <caret line="13" column="69" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="69" />
               <folding>
                 <element signature="e#111#112#0" expanded="true" />
                 <element signature="e#151#152#0" expanded="true" />
@@ -47,8 +47,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="831" />
-    <option name="y" value="-1011" />
+    <option name="x" value="650" />
+    <option name="y" value="-1046" />
     <option name="width" value="1680" />
     <option name="height" value="957" />
   </component>
@@ -58,7 +58,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="magic_calculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="magic_calculator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="magic_calculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="magic_calculator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -66,7 +81,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550441362773" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550447072977" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RunDashboard">
@@ -113,18 +128,17 @@
       <workItem from="1550180426617" duration="191000" />
       <workItem from="1550180664144" duration="38000" />
       <workItem from="1550181270413" duration="7418000" />
-      <workItem from="1550442594942" duration="801000" />
+      <workItem from="1550442594942" duration="1907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13347000" />
+    <option name="totallyTimeSpent" value="14453000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="719" y="-1046" width="1680" height="957" extended-state="0" />
-    <editor active="true" />
+    <frame x="650" y="-1046" width="1680" height="957" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12942614" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12942614" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -162,8 +176,8 @@
     <entry file="file://$PROJECT_DIR$/src/Number.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="209">
+          <caret line="13" column="69" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="69" />
           <folding>
             <element signature="e#111#112#0" expanded="true" />
             <element signature="e#151#152#0" expanded="true" />
