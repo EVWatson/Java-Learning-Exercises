@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a177483a-a523-4a08-8c48-b9109c4ff0b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../magic_calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../magic_calculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magic_calculator/out/production/Magic Calculator/META-INF/Magic Calculator.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payslip_generator/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payslip_generator/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payslip_generator/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payslip_generator/.idea/payslip_generator.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payslip_generator/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payslip_generator/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payslip_generator/java_repo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payslip_generator/src/Main.java" beforeDir="false" />
-    </list>
+    <list default="true" id="a177483a-a523-4a08-8c48-b9109c4ff0b9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +14,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
+            <state relative-caret-position="-198">
               <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
               <folding>
                 <element signature="e#116#117#0" expanded="true" />
@@ -69,7 +58,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550612520402" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550614167092" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -158,7 +147,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
+        <state relative-caret-position="-198">
           <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding>
             <element signature="e#116#117#0" expanded="true" />
