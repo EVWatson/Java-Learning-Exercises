@@ -43,8 +43,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println();
-        System.out.println("Welcome to the Payslip Generator!");
+        
+        System.out.println("\nWelcome to the Payslip Generator!");
         System.out.println();
 
 
