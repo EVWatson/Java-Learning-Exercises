@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a177483a-a523-4a08-8c48-b9109c4ff0b9" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="a177483a-a523-4a08-8c48-b9109c4ff0b9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../magic_calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../magic_calculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
+
+>>>>>>> 490738eba5b06865547707f7c5c956e06602f31d
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +22,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="159">
               <caret line="103" selection-start-line="103" selection-end-line="103" />
+=======
+
+            <state relative-caret-position="-2181">
+              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+>>>>>>> 490738eba5b06865547707f7c5c956e06602f31d
               <folding>
                 <element signature="e#116#117#0" expanded="true" />
                 <element signature="e#156#157#0" expanded="true" />
@@ -70,6 +84,7 @@
             <path>
               <item name="payslip_challenge" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="payslip_challenge" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+
               <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -104,7 +119,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550612520402" />
+
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550614167092" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -150,13 +166,24 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="20939000" />
+=======
+    <option name="totallyTimeSpent" value="20545000" />
+
+>>>>>>> 490738eba5b06865547707f7c5c956e06602f31d
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="33" width="1680" height="965" extended-state="0" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13553114" />
+=======
+
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13553114" />
+
+>>>>>>> 490738eba5b06865547707f7c5c956e06602f31d
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -165,7 +192,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38946164" />
+=======
+
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38946164" />
+
+>>>>>>> 490738eba5b06865547707f7c5c956e06602f31d
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -192,6 +225,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
@@ -219,5 +253,41 @@
         </state>
       </provider>
     </entry>
+=======
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="985">
+          <caret line="163" column="46" selection-start-line="163" selection-start-column="46" selection-end-line="163" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="-2181">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="e#116#117#0" expanded="true" />
+            <element signature="e#156#157#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+>>>>>>> 490738eba5b06865547707f7c5c956e06602f31d
   </component>
 </project>

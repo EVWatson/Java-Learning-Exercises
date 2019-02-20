@@ -43,8 +43,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println();
-        System.out.println("Welcome to the Payslip Generator!");
+
+        System.out.println("\nWelcome to the Payslip Generator!\n");
         System.out.println();
 
 
@@ -92,16 +92,16 @@ public class Main {
         Double netIncome = calculateNetIncome(grossIncome, incomeTax);
         Double superAnnuation = calculateSuper(grossIncome, superRate);
 
-        System.out.println();
-        System.out.println("Your payslip has been generated:");
-        System.out.println();
+
+        System.out.println("\nYour payslip has been generated:\n");
+
         System.out.println("Name: " + fullName);
         System.out.println("Pay Period: " + payPeriod);
         System.out.println("Gross Income: " + "$" + Math.round(grossIncome));
         System.out.println("Income Tax: " + "$" + Math.round(incomeTax));
         System.out.println("Net Income: " + "$" + Math.round(netIncome));
         System.out.println("Super: " + "$" + Math.round(superAnnuation));
-        System.out.println();
-        System.out.println("Thank you for using MYOB!");
+
+        System.out.println("\nThank you for using MYOB!");
     }
 }
