@@ -11,10 +11,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
+            <state relative-caret-position="159">
               <caret line="103" selection-start-line="103" selection-end-line="103" />
               <folding>
                 <element signature="e#116#117#0" expanded="true" />
@@ -26,9 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2" />
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -39,16 +41,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/.idea/compiler.xml" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="591" />
-    <option name="y" value="-1057" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1920" />
+    <option name="y" value="33" />
     <option name="width" value="1680" />
-    <option name="height" value="957" />
+    <option name="height" value="965" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -148,10 +150,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20492000" />
+    <option name="totallyTimeSpent" value="20939000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1882" y="39" width="1680" height="957" extended-state="0" />
+    <frame x="-1920" y="33" width="1680" height="965" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13553114" />
@@ -163,7 +165,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39306358" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38946164" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -189,19 +191,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
-          <folding>
-            <element signature="e#116#117#0" expanded="true" />
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -209,6 +198,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-46">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="e#116#117#0" expanded="true" />
+            <element signature="e#156#157#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
