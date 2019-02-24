@@ -58,6 +58,12 @@ public class Main {
                 {7, 8, 9}
         };
 
+        int gameBoard5[][] = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+
 //        for(int index = 0; index <= 2; index = index + 1) {
 //            for (int i=0; i <=2; i = i + 1)
 //                System.out.print(gameBoard4[index][i] + "  ");
@@ -71,6 +77,8 @@ public class Main {
         addArrayTogether(randomArray);
 
         sumOfArrayValues(gameBoard4);
+
+        totalArrayValues(gameBoard5);
 
     }
 
@@ -87,6 +95,7 @@ public class Main {
 
     }
 
+
     public static void sumOfArrayValues(int[][] gameBoard4) {
         int sumOfArrayValues = 0;
         for (int i = 0; i <= 2; i++) {
@@ -95,6 +104,20 @@ public class Main {
             }
         }
         System.out.println("sum of all array values: " + sumOfArrayValues);
+    }
+
+    public static void totalArrayValues(int [][] gameBoard5) {
+        int totalArrayValues = 0;
+        int i = 0;
+        while (i <= 2) {
+            int j = 0;
+            while (j <= 2) {
+                totalArrayValues += gameBoard5[i][j];
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+        System.out.println("sum of all array values: " + totalArrayValues);
     }
 
 //    int gameBoard5[][] = {
