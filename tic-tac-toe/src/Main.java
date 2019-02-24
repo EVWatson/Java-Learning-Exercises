@@ -59,9 +59,9 @@ public class Main {
         };
 
         int gameBoard5[][] = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
+                {2, 4, 6},
+                {8, 10, 12},
+                {14, 16, 18}
         };
 
 //        for(int index = 0; index <= 2; index = index + 1) {
