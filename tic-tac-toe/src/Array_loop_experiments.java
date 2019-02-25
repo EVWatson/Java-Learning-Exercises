@@ -101,9 +101,26 @@ public class Array_loop_experiments {
         int newVanillaArray[] = createNewVanillaArray();
 
         for (int i = 0; i < newVanillaArray.length; i++)
-            System.out.println(newVanillaArray[i] + " ");
+            System.out.print(newVanillaArray[i] + " ");
 
+        System.out.println();
 
+        int makeYourOwn2DArray[][] = createYourOwn2DArray();
+
+        for (int i = 0; i <makeYourOwn2DArray.length; i++) {
+            for (int j = 0; j <makeYourOwn2DArray.length; j++){
+                System.out.print(makeYourOwn2DArray[i][j] + " ");
+            }
+        } System.out.println();
+    }
+
+//    sort of works. doesn't really create  new array, wont' let you enter too many numbers
+
+    public static int[][] createYourOwn2DArray() {
+        Scanner getInput = new Scanner(System.in);
+        System.out.println("enter array values: ");
+        int inputValues1 = getInput.nextInt();
+        return new int [][] {{inputValues1, inputValues1, inputValues1}};
     }
 
     public static int[] makeArray() {
@@ -114,11 +131,11 @@ public class Array_loop_experiments {
         return new int[][]{{8, 8, 8}, {8, 8, 8}, {8, 8, 8}};
     }
 
-
+//better way to do this??? sort of works. convert string to int?
 
     public static int[] createNewVanillaArray() {
         Scanner getInput = new Scanner(System.in);
-        System.out.println("enter array: ");
+        System.out.println("enter 3 array values: ");
         int enterValues = getInput.nextInt();
         return new int [] {enterValues};
     }
