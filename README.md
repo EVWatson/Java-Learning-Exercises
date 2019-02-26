@@ -15,7 +15,7 @@
 # Goals
 
 
-### Short-term:
+## Short-term:
 - continue building on loops and arrays
 - work towards turning this into the game board part of tic-tac-toe
 
