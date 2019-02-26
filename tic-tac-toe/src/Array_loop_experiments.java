@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Array_loop_experiments {
@@ -176,7 +177,23 @@ public class Array_loop_experiments {
             i = i + 1;
         }
         System.out.println("sum of all array values: " + totalArrayValues);
+
+        String[][] boardOfStrings = new String[3][3];
+//            boardOfStrings[1][2] = "hello";
+
+        for (int a = 0; a <= 2; a++) {
+            for (int b = 0; b <= 2; b++) {
+                boardOfStrings[a][b] = "*";
+                System.out.print(boardOfStrings[a][b] + " ");
+            }
+            System.out.println();
+
+        }
+
+//        System.out.println(Arrays.deepToString(boardOfStrings));
     }
+
+
 
 }
 
