@@ -1,24 +1,45 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 public class Game_board {
+
+////    Back to multidimensional arraylists and methods that (hopefully) all me to change elements at specific points. Maybe..
+//
+//    static List create2DArrayList() {
+//        ArrayList<ArrayList<String> > xy = new ArrayList<ArrayList<String> > ();
+//
+//        xy.add(new ArrayList<String>());
+//        xy.get(0).add(0, "*");
+//        xy.get(1).add(1, "*");
+//        xy.get()
+
+
 
     public static void main(String[] args) {
 
-//        board printing v1. note to self: when no string value is specified, each
+//        board printing v1. **moved to gameboard 2
 
-        String[][] theGameBoard = new String[3][3];
-//            theGameBoard[1][2] = "#";
-        for (int x = 0; x <= 2; x++) {
-            for (int y = 0; y <= 2; y++) {
-                theGameBoard[x][y] = "*";
-                System.out.print(theGameBoard[x][y] + "     ");
-            }
-            System.out.println(" \n");
-        }
-
-        System.out.println();
-
-        System.out.println(theGameBoard[1][1]);
-
-        System.out.println();
+//        String[][] theGameBoard = new String[3][3];
+////            theGameBoard[1][2] = "#";
+//        for (int x = 0; x <= 2; x++) {
+//            for (int y = 0; y <= 2; y++) {
+//                theGameBoard[x][y] = "*";
+//                System.out.print(theGameBoard[x][y] + "     ");
+//            }
+//            System.out.println(" \n");
+//        }
+//
+//        System.out.println();
+//
+//        System.out.println(theGameBoard[1][1]);
+//
+//        theGameBoard[0][0] = "X";
+//
+//        System.out.print(theGameBoard[0][0]);
+//
+//        System.out.println();
 
 //        swapping an element of the array for something else.
 //        simple array first:
@@ -56,23 +77,58 @@ public class Game_board {
 
         System.out.println();
 
-        String[] miniArray = {"X", "X", "X"};
 
-        changeArrayElement(miniArray);
 
-    }
+//        tried with array. complete waste of time. only works with a string, defeats the purpose of using an array.
 
-    public static void changeArrayElement (String [] miniArray) {
-        int index = 0;
-        char ch = '*';
+//        String[] miniArray = {"X X X"};
+//
+//        changeArrayElement(miniArray);
+//
+//    }
+//
+//    public static void changeArrayElement (String [] miniArray) {
+//
+//        for (int x = 0; x < 2; x++) {
+//            String theString = miniArray[x];
+//            int index = 1;
+//            char ch = '*';
+//
+//            StringBuilder newElement = new StringBuilder(theString);
+//            newElement.setCharAt(index, ch);
+//
+//            System.out.println("New array = " + newElement);
+//
+//        }
 
-        for (int x = 0; x < 2; x++) {
+//        trying arrays.asList
 
-            StringBuilder newElement = new StringBuilder(miniArray[2]);
-            newElement.setCharAt(index, ch);
+        String gameFields[] = new String[] {"*", "*", "*"};
 
-            System.out.println("New array = " + newElement);
+        List row1 = Arrays.asList(gameFields);
 
-        }
+        System.out.println("The first row is: " + row1);
+
+        System.out.println();
+
+        String allGameFields [][] = new String[][] {
+                {"*", "*", "*"},
+                {"*", "*", "*"},
+                {"*", "*", "*"}
+        };
+
+//        doesn't work with 2d arrays
+
+//        for (int i = 0; i <=2; i++) {
+//            List rowFields = Arrays.asList(allGameFields);
+//            for (int j= 0; j <=2; j++) {
+//                List columnFields = Arrays.asList(allGameFields);
+//                System.out.println("all game fields are: " + rowFields + columnFields);
+//            }
+//        }
+
+
+
+
     }
 }
