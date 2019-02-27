@@ -52,13 +52,31 @@ public class Game_Board_2 {
 
         theGameBoard[1][1] = z;
 
-//        for (int x = 0; x <= 2; x++) {
-//            for (int y = 0; y <= 2; y++) {
-//                System.out.print(theGameBoard[x][y] + "      ");
-//            }
-//            System.out.println("\n");
-//        }
             updateBoard(theGameBoard);
+
+            System.out.println();
+
+            String playerOneToken = "X";
+            String playerTwoToken = "O";
+
+            Scanner chooseField = new Scanner(System.in);
+            System.out.print("choose co-ordinates: ");
+            int index = chooseField.nextInt();
+
+            theGameBoard[index - 1][index - 1] = playerOneToken;
+
+            updateBoard(theGameBoard);
+
+            System.out.println();
+
+//            Scanner enterCoordinates = new Scanner(System.in);
+//            System.out.print("Enter coord x,y: ");
+
+//            int x1 = index;
+
+
+
+
 
 //        now need to imput coordinates instead of symbol.
 //        also method for updating board so no need to keep re-writing loop.
