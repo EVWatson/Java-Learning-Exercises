@@ -8,10 +8,17 @@ public class Player {
 
 
 public static void main(String[] args) {
-        Player player1 = new Player("X");
-        Player player2 = new Player("O");
-    }
+    Player player1 = new Player("X");
+    Player player2 = new Player("O");
 
+
+    System.out.println(player1);
+    System.out.println(player2);
+    
+    System.out.println();
+
+
+  }
 }
 // player1 goes first
 //player2 goes second
