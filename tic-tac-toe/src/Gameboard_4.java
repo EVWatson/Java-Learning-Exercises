@@ -10,10 +10,6 @@ public class Gameboard_4 {
         coordinates[0] = index1;
         coordinates[1] = index2;
         return coordinates;
-//        System.out.println(position);
-//        System.out.println(checkSquare(position));
-//        gameBoard[index1 - 1][index2 - 1] = token;
-//        return position;
     }
 
     public static boolean checkSquare(String[][] gameBoard, int[] boardCoordinates) {
