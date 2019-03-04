@@ -30,7 +30,7 @@ public class Gameboard_4 {
         // printBoard(gameBoard);
     }
 
-    public static void printBoard(String[][] gameBoard) {
+    public static void printGameBoard(String[][] gameBoard) {
         for (int x = 0; x <= 2; x++) {
             for (int y = 0; y <= 2; y++) {
                 System.out.print(gameBoard[x][y] + "      ");
@@ -39,7 +39,7 @@ public class Gameboard_4 {
         }
     }
 
-    public static String[][] initialiseBoard() {
+    public static String[][] setUpGameBoard() {
         String[][] newBoard = new String[3][3];
         for (int x = 0; x <= 2; x++) {
             for (int y = 0; y <= 2; y++) {
@@ -49,40 +49,66 @@ public class Gameboard_4 {
         return newBoard;
     }
 
+    private static boolean isPlayer1Turn(int gameRound)
+    {
+        if ((gameRound % 2) == 0) {
+            return false;
+        }
+        return true;
+    }
+
     public static void main (String[]args){
-//            String[][] gameBoard = new String[3][3];
-//            for (int x = 0; x <= 2; x++) {
-//                for (int y = 0; y <= 2; y++) {
-//                    gameBoard[x][y] = "*";
-//                }
-//            }
-            String[][] gameBoard = initialiseBoard();
 
-            printBoard(gameBoard);
+            String[][] gameBoard = setUpGameBoard();
 
-            System.out.println();
+            printGameBoard(gameBoard);
 
-            int turns = 0;
-            while (turns < 9) {
-                System.out.print("\nPlayer 1 enter co-ordinates: ");
-                int[] coordinates = chooseCoordinates();
-                boolean freeSpace = checkSquare(gameBoard, coordinates);
 
-                if (freeSpace == true) {
-                    writeSquare(gameBoard, coordinates, "X");
-                    turns++;
+            int gameRound = 1;
+
+//            replace <= 9 with a method
+
+            while (gameRound <= 9) {
+
+                String player;
+                String token;
+
+                if (isPlayer1Turn(gameRound)) {
+                    player = "Player 1";
+                    token = "X";
+                } else {
+                    player = "Player 2";
+                    token = "O";
                 }
-                else {
-                    System.out.println("Space already taken");
-                }
-                printBoard(gameBoard);
+
+                    System.out.print(player + " enter co-ordinates: ");
+                    int[] coordinates = chooseCoordinates();
+                    boolean freeSpace = checkSquare(gameBoard, coordinates);
+
+                    if (freeSpace == true) {
+                        writeSquare(gameBoard, coordinates, token);
+                        gameRound++;
+                    } else {
+                        System.out.println("Space already taken, please choose other coordinates:");
+                    }
+                    printGameBoard(gameBoard);
 
 
-//                System.out.print("\nPlayer 2 enter co-ordinates: ");
-//                chooseCoordinates(gameBoard, "O");
-//                checkSquare(boardField, gameBoard);
 
-//                turns++;
+                /*
+                 1. prompt player 1 for coordinates
+                 2. check if coordinates is available
+                 3. if available, print
+                    if not available, prompt again (1)
+                 4. print board
+                 5. prompt player 2 for coordinates
+                 6. check if coordinates is available
+                 7. if available, print
+                    if not available, prompt again (5)
+                 8. if  final (9th) attempt, then quit
+                 */
+
+//                add player 2
             }
 
 
