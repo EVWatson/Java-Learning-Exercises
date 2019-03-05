@@ -64,6 +64,40 @@ public class Gameboard_4 {
         return false;
     }
 
+    public static void gameIsADraw() {
+        System.out.println("GAME OVER! There are no more spaces available! So who won? The Game? Both players? You Decide...");
+    }
+
+    public static boolean hasPlayerWon(int [][] gameBoard, String currentPlayerToken) {
+        for (int x = 0; x <= 2; x++)
+            for (int y = 0; y <= 2; y++)
+//                 String [][] gameBoardRow = currentPlayerToken or whatever
+                if(gameBoardRow[0][0].equals(currentPlayerToken)  && gameBoardRow[0][2].equals(currentPlayerToken)) {
+                    return true;
+                }
+                if(gameBoardRow[1][0].equals(currentPlayerToken) && gameBoardRow[1][2].equals(currentPlayerToken)) {
+                    return true;
+                }
+                if(gameBoardRow[2][0].equals(currentPlayerToken) && gameBoardRow[2][2].equals(currentPlayerToken)) {
+                    return true;
+                }
+                if(gameBoardColumn[0][0].equals(currentPlayerToken) && gameBoardColumn[2][0].equals(currentPlayerToken)) {
+                    return true;
+                }
+                if(gameBoardColumn[0][1].equals(currentPlayerToken) && gameBoardColumn[2][1].equals(currentPlayerToken)) {
+                    return true;
+                }
+                if(gameBoardColumn[0][2].equals(currentPlayerToken) && gameBoardColumn[2][2].equals(currentPlayerToken)) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+
+
+    }
+
     public static void main (String[]args){
 
             String[][] gameBoard = setUpGameBoard();
@@ -71,16 +105,14 @@ public class Gameboard_4 {
             printGameBoard(gameBoard);
 
 
-             int turnsTaken = 1;
+             int playerTurn = 1;
 
-//            replace <= 9 with a method
-
-            while (gameInPlay(turnsTaken)) {
+            while (gameInPlay(playerTurn)) {
 
                 String player;
                 String token;
 
-                if (isPlayer1Turn(turnsTaken)) {
+                if (isPlayer1Turn(playerTurn)) {
                     player = "Player 1";
                     token = "X";
                 } else {
@@ -93,8 +125,13 @@ public class Gameboard_4 {
                     boolean freeSpace = checkSquare(gameBoard, coordinates);
 
                     if (freeSpace == true) {
-                        writeSquare(gameBoard, coordinates, token);
-                        turnsTaken++;
+//                        check if player has won:
+                        if (hasPlayerWon(gameBoardRow, gameBoardColumn, token) == false) {
+//                        if false, continue with:
+                            writeSquare(gameBoard, coordinates, token);
+                            playerTurn++;
+                        }
+//                        if true, end game.
                     } else {
                         System.out.println("Space already taken, please choose other coordinates:");
                     }
@@ -104,7 +141,7 @@ public class Gameboard_4 {
 
                 /*
                  1. prompt player 1 for coordinates
-                 2. check if coordinates is available
+                 2. check if coordinates are available
                  3. if available, print
                     if not available, prompt again (1)
                  4. print board
@@ -112,12 +149,20 @@ public class Gameboard_4 {
                  6. check if coordinates is available
                  7. if available, print
                     if not available, prompt again (5)
-                 8. if  final (9th) attempt, then quit
+                 8. if  final (9th) attempt, then quit (game is a draw)
                  */
 
 //                add player 2
+
+                /*
+                1. prompt p1 for coords
+                2. check if selected coords are available
+                3.
+
+                 */
             }
 
+            gameIsADraw();
 
         }
     }
