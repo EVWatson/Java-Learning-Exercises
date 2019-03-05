@@ -57,6 +57,13 @@ public class Gameboard_4 {
         return true;
     }
 
+    public static boolean gameInPlay(int turnsTaken) {
+        if (turnsTaken <= 9) {
+            return true;
+        }
+        return false;
+    }
+
     public static void main (String[]args){
 
             String[][] gameBoard = setUpGameBoard();
@@ -64,16 +71,16 @@ public class Gameboard_4 {
             printGameBoard(gameBoard);
 
 
-            int gameRound = 1;
+             int turnsTaken = 1;
 
 //            replace <= 9 with a method
 
-            while (gameRound <= 9) {
+            while (gameInPlay(turnsTaken)) {
 
                 String player;
                 String token;
 
-                if (isPlayer1Turn(gameRound)) {
+                if (isPlayer1Turn(turnsTaken)) {
                     player = "Player 1";
                     token = "X";
                 } else {
@@ -87,7 +94,7 @@ public class Gameboard_4 {
 
                     if (freeSpace == true) {
                         writeSquare(gameBoard, coordinates, token);
-                        gameRound++;
+                        turnsTaken++;
                     } else {
                         System.out.println("Space already taken, please choose other coordinates:");
                     }
