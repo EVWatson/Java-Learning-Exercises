@@ -19,6 +19,10 @@
 - continue building on loops and arrays
 - work towards turning this into the game board part of tic-tac-toe
 
+## Long-term
+- learn about testing
+- learn how to OO design my code
+
 
 ## 26/2
 
@@ -30,3 +34,8 @@
 - able to select 2nd ~ n positions after the first one
 - alternating symbols
 - checking whether a position is already taken
+
+## 5/3
+
+### End of Week:
+- implement win/game end conditions
