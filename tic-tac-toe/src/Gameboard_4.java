@@ -49,6 +49,11 @@ public class Gameboard_4 {
         return newBoard;
     }
 
+    public static void promptPlayerToMakeMove(String player) {
+        System.out.print(player + " enter co-ordinates: ");
+
+    }
+
     private static boolean isPlayer1Turn(int gameRound)
     {
         if ((gameRound % 2) == 0) {
@@ -130,8 +135,7 @@ public class Gameboard_4 {
                     player = "Player 2";
                     token = "O";
                 }
-
-                    System.out.print(player + " enter co-ordinates: ");
+                    promptPlayerToMakeMove(player);
                     int[] coordinates = chooseCoordinates();
                     boolean freeSpace = checkSquare(gameBoard, coordinates);
 
