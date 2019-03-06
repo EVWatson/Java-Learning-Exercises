@@ -2,10 +2,16 @@ import java.util.Scanner;
 
 public class Gameboard_4 {
 
-    public static int[] chooseCoordinates() {
+    public static String getPlayerChoice() {
         Scanner chooseField = new Scanner(System.in);
-        int index1 = chooseField.nextInt();
-        int index2 = chooseField.nextInt();
+        String rawPlayerInput = chooseField.nextLine();
+        return rawPlayerInput;
+    }
+
+    public static int[] turnStringIntoCoordinates(String rawPlayerInput) {
+        String[] splitPlayerInput = rawPlayerInput.split(" ");
+        int index1 = Integer.parseInt(splitPlayerInput[0]);
+        int index2 = Integer.parseInt(splitPlayerInput[1]);
         int[] coordinates = new int[2];
         coordinates[0] = index1;
         coordinates[1] = index2;
@@ -101,12 +107,26 @@ public class Gameboard_4 {
         return false;
     }
 
-    public static boolean checkRowsAndColumns(String playerToken, String[][] gameBoard) {
+    public static boolean checkDiagonal(String playerToken, String[][] gameBoard) {
+
+        if ((gameBoard[0][0].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[2][2].equals(playerToken))) {
+            return true;
+        }
+        else if ((gameBoard[0][2].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[2][0].equals(playerToken))) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean checkIfPlayerHasWon(String playerToken, String[][] gameBoard) {
         if (checkRows(playerToken, gameBoard)) {
                 return true;
         }
         else if (checkColumns(playerToken, gameBoard)) {
-                return true;
+            return true;
+        }
+        else if (checkDiagonal(playerToken, gameBoard)) {
+            return true;
         }
         else {
             return false;
@@ -120,8 +140,7 @@ public class Gameboard_4 {
 
             printGameBoard(gameBoard);
 
-
-             int playerTurn = 1;
+            int playerTurn = 1;
 
             while (gameInPlay(playerTurn)) {
 
@@ -136,26 +155,31 @@ public class Gameboard_4 {
                     token = "O";
                 }
                     promptPlayerToMakeMove(player);
-                    int[] coordinates = chooseCoordinates();
+                    String playerChoice = getPlayerChoice();
+                    if (playerChoice.equals("q")) {
+                        System.out.println("you forfeit");
+                        break;
+                    }
+
+                    int[] coordinates = turnStringIntoCoordinates(playerChoice);
+
                     boolean freeSpace = checkSquare(gameBoard, coordinates);
 
                     if (freeSpace) {
                         writeSquare(gameBoard, coordinates, token);
-                        if (checkRowsAndColumns(token, gameBoard)) {
+                        if (checkIfPlayerHasWon(token, gameBoard)) {
                             printGameBoard(gameBoard);
                             System.out.println("congratulations " + player + " you win!");
                             break;
                         }
-                        else if (!checkRowsAndColumns(token, gameBoard)) {
+                        else {
                             playerTurn++;
                             printGameBoard(gameBoard);
                         }
-
                     }
                     else {
                         System.out.println("Space already taken, please choose other coordinates:");
                     }
-
                     if (playerTurn > 9) {
                         gameIsADraw();
                     }
