@@ -10,6 +10,10 @@
 - Tic-Tac-Toe
   - begun 21/2
   - ongoing
+  - v1 finished 6/3
+  
+ - Fizz Buzz
+  - begun 7/3
 
 ------------------------------------------------------------------------------------------------------------------------------
 # Goals
@@ -39,3 +43,5 @@
 
 ### End of Week:
 - implement win/game end conditions
+- start fizz buzz
+- understanding that loops do not always have to be used with arrays
