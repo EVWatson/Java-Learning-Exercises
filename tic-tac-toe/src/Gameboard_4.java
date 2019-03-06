@@ -2,10 +2,16 @@ import java.util.Scanner;
 
 public class Gameboard_4 {
 
-    public static int[] chooseCoordinates() {
+    public static String getPlayerChoice() {
         Scanner chooseField = new Scanner(System.in);
-        int index1 = chooseField.nextInt();
-        int index2 = chooseField.nextInt();
+        String rawPlayerInput = chooseField.nextLine();
+        return rawPlayerInput;
+    }
+
+    public static int[] turnStringIntoCoordinates(String rawPlayerInput) {
+        String[] splitPlayerInput = rawPlayerInput.split(",");
+        int index1 = Integer.parseInt(splitPlayerInput[0]);
+        int index2 = Integer.parseInt(splitPlayerInput[1]);
         int[] coordinates = new int[2];
         coordinates[0] = index1;
         coordinates[1] = index2;
@@ -30,6 +36,10 @@ public class Gameboard_4 {
         // printBoard(gameBoard);
     }
 
+    public static void confirmMoveIsAccepted() {
+        System.out.println("\nMove accepted, here's the current board:\n");
+    }
+
     public static void printGameBoard(String[][] gameBoard) {
         for (int x = 0; x <= 2; x++) {
             for (int y = 0; y <= 2; y++) {
@@ -49,6 +59,21 @@ public class Gameboard_4 {
         return newBoard;
     }
 
+    public static void printGameBeginning () {
+        System.out.println(
+                "~~ Welcome to Tic Tac Toe! ~~ \n\n Here is your current game board. Let the game begin...\n "
+        );
+    }
+
+    public static void promptPlayerToMakeMove(String player, String token) {
+        System.out.print(player + " enter a co-ordinate x,y to place your " + token + " or enter 'q' to give up: ");
+
+    }
+
+    public static void gameFieldUnavailable() {
+        System.out.println("\nThat space is already taken, please choose other coordinates:");
+    }
+
     private static boolean isPlayer1Turn(int gameRound)
     {
         if ((gameRound % 2) == 0) {
@@ -65,7 +90,11 @@ public class Gameboard_4 {
     }
 
     public static void gameIsADraw() {
-        System.out.println("GAME OVER! There are no more spaces available! So who won? The Game? Both players? You Decide...");
+        System.out.println("GAME OVER! There are no more spaces available! So who won? The Game? Both players? You decide...");
+    }
+
+    public static void playerChoosesQuit(String playerChoice, String player) {
+            System.out.println("GAME OVER! " + player + ", you forfeit the game!");
     }
 
     public static boolean checkRows(String playerToken, String[][] gameBoard) {
@@ -87,7 +116,7 @@ public class Gameboard_4 {
         if ((gameBoard[0][0].equals(playerToken)) && ((gameBoard[1][0].equals(playerToken))) && (gameBoard[2][0].equals(playerToken))) {
             return true;
         }
-        else if ((gameBoard[1][0].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[2][1].equals(playerToken))) {
+        else if ((gameBoard[0][1].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[2][1].equals(playerToken))) {
             return true;
         }
         else if ((gameBoard[0][2].equals(playerToken)) && ((gameBoard[1][2].equals(playerToken))) && (gameBoard[2][2].equals(playerToken))) {
@@ -96,27 +125,47 @@ public class Gameboard_4 {
         return false;
     }
 
-    public static boolean checkRowsAndColumns(String playerToken, String[][] gameBoard) {
-        if (checkRows(playerToken, gameBoard)) {
-            System.out.println("we have a winner!");
+    public static boolean checkDiagonal(String playerToken, String[][] gameBoard) {
+
+        if ((gameBoard[0][0].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[2][2].equals(playerToken))) {
+            return true;
         }
-        else if (checkColumns(playerToken, gameBoard)) {
-                System.out.println("we have a winner!");
-        }
-        else {
-            return false;
+        else if ((gameBoard[0][2].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[2][0].equals(playerToken))) {
+            return true;
         }
         return false;
     }
 
+    public static boolean checkIfPlayerHasWon(String playerToken, String[][] gameBoard) {
+        if (checkRows(playerToken, gameBoard)) {
+                return true;
+        }
+        else if (checkColumns(playerToken, gameBoard)) {
+            return true;
+        }
+        else if (checkDiagonal(playerToken, gameBoard)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    public static void printWinnerMessage(String player) {
+        System.out.println("\nCongratulations " + player + ", you win!\n");
+
+    }
+
     public static void main (String[]args) {
+
+            printGameBeginning();
 
             String[][] gameBoard = setUpGameBoard();
 
             printGameBoard(gameBoard);
 
-
-             int playerTurn = 1;
+            int playerTurn = 1;
 
             while (gameInPlay(playerTurn)) {
 
@@ -130,24 +179,45 @@ public class Gameboard_4 {
                     player = "Player 2";
                     token = "O";
                 }
+                    promptPlayerToMakeMove(player, token);
+                    String playerChoice = getPlayerChoice();
+                    if (playerChoice.equals("q")) {
+                        playerChoosesQuit(playerChoice, player);
+                        break;
+                    }
 
-                    System.out.print(player + " enter co-ordinates: ");
-                    int[] coordinates = chooseCoordinates();
+                    int[] coordinates = turnStringIntoCoordinates(playerChoice);
+
                     boolean freeSpace = checkSquare(gameBoard, coordinates);
 
-                    if (freeSpace == true) {
+                    if (freeSpace) {
                         writeSquare(gameBoard, coordinates, token);
-                        checkRowsAndColumns(token, gameBoard);
-                        System.out.println(checkRowsAndColumns(token, gameBoard));
-                        playerTurn++;
-                    } else {
-                        System.out.println("Space already taken, please choose other coordinates:");
+                        if (checkIfPlayerHasWon(token, gameBoard)) {
+                            printWinnerMessage(player);
+                            printGameBoard(gameBoard);
+                            break;
+                        }
+                        else {
+                            playerTurn++;
+                            confirmMoveIsAccepted();
+                            printGameBoard(gameBoard);
+                        }
                     }
-                    printGameBoard(gameBoard);
+                    else {
+                        gameFieldUnavailable();
+                    }
+                    if (playerTurn > 9) {
+                        gameIsADraw();
+                    }
+
+            }
+            
+
+        }
+    }
 
 
-
-                /*
+        /*
                  1. prompt player 1 for coordinates
                  2. check if coordinates are available
                  3. if available, print
@@ -159,19 +229,4 @@ public class Gameboard_4 {
                     if not available, prompt again (5)
                  8. if  final (9th) attempt, then quit (game is a draw)
                  */
-
-//                add player 2
-
-                /*
-                1. prompt p1 for coords
-                2. check if selected coords are available
-                3.
-
-                 */
-            }
-
-            gameIsADraw();
-
-        }
-    }
 
