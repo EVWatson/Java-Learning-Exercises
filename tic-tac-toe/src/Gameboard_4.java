@@ -68,37 +68,48 @@ public class Gameboard_4 {
         System.out.println("GAME OVER! There are no more spaces available! So who won? The Game? Both players? You Decide...");
     }
 
-    public static boolean hasPlayerWon(int [][] gameBoard, String currentPlayerToken) {
-        for (int x = 0; x <= 2; x++)
-            for (int y = 0; y <= 2; y++)
-//                 String [][] gameBoardRow = currentPlayerToken or whatever
-                if(gameBoardRow[0][0].equals(currentPlayerToken)  && gameBoardRow[0][2].equals(currentPlayerToken)) {
-                    return true;
-                }
-                if(gameBoardRow[1][0].equals(currentPlayerToken) && gameBoardRow[1][2].equals(currentPlayerToken)) {
-                    return true;
-                }
-                if(gameBoardRow[2][0].equals(currentPlayerToken) && gameBoardRow[2][2].equals(currentPlayerToken)) {
-                    return true;
-                }
-                if(gameBoardColumn[0][0].equals(currentPlayerToken) && gameBoardColumn[2][0].equals(currentPlayerToken)) {
-                    return true;
-                }
-                if(gameBoardColumn[0][1].equals(currentPlayerToken) && gameBoardColumn[2][1].equals(currentPlayerToken)) {
-                    return true;
-                }
-                if(gameBoardColumn[0][2].equals(currentPlayerToken) && gameBoardColumn[2][2].equals(currentPlayerToken)) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
+    public static boolean checkRows(String playerToken, String[][] gameBoard) {
 
-
+        if ((gameBoard[0][0].equals(playerToken)) && ((gameBoard[0][1].equals(playerToken))) && (gameBoard[0][2].equals(playerToken))) {
+            return true;
+       }
+        else if ((gameBoard[1][0].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[1][2].equals(playerToken))) {
+            return true;
+        }
+        else if ((gameBoard[2][0].equals(playerToken)) && ((gameBoard[2][1].equals(playerToken))) && (gameBoard[2][2].equals(playerToken))) {
+            return true;
+        }
+       return false;
     }
 
-    public static void main (String[]args){
+    public static boolean checkColumns(String playerToken, String[][] gameBoard) {
+
+        if ((gameBoard[0][0].equals(playerToken)) && ((gameBoard[1][0].equals(playerToken))) && (gameBoard[2][0].equals(playerToken))) {
+            return true;
+        }
+        else if ((gameBoard[1][0].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[2][1].equals(playerToken))) {
+            return true;
+        }
+        else if ((gameBoard[0][2].equals(playerToken)) && ((gameBoard[1][2].equals(playerToken))) && (gameBoard[2][2].equals(playerToken))) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean checkRowsAndColumns(String playerToken, String[][] gameBoard) {
+        if (checkRows(playerToken, gameBoard)) {
+            System.out.println("we have a winner!");
+        }
+        else if (checkColumns(playerToken, gameBoard)) {
+                System.out.println("we have a winner!");
+        }
+        else {
+            return false;
+        }
+        return false;
+    }
+
+    public static void main (String[]args) {
 
             String[][] gameBoard = setUpGameBoard();
 
@@ -125,13 +136,10 @@ public class Gameboard_4 {
                     boolean freeSpace = checkSquare(gameBoard, coordinates);
 
                     if (freeSpace == true) {
-//                        check if player has won:
-                        if (hasPlayerWon(gameBoardRow, gameBoardColumn, token) == false) {
-//                        if false, continue with:
-                            writeSquare(gameBoard, coordinates, token);
-                            playerTurn++;
-                        }
-//                        if true, end game.
+                        writeSquare(gameBoard, coordinates, token);
+                        checkRowsAndColumns(token, gameBoard);
+                        System.out.println(checkRowsAndColumns(token, gameBoard));
+                        playerTurn++;
                     } else {
                         System.out.println("Space already taken, please choose other coordinates:");
                     }
