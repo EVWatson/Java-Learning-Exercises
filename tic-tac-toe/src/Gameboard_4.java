@@ -92,7 +92,7 @@ public class Gameboard_4 {
         if ((gameBoard[0][0].equals(playerToken)) && ((gameBoard[1][0].equals(playerToken))) && (gameBoard[2][0].equals(playerToken))) {
             return true;
         }
-        else if ((gameBoard[1][0].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[2][1].equals(playerToken))) {
+        else if ((gameBoard[0][1].equals(playerToken)) && ((gameBoard[1][1].equals(playerToken))) && (gameBoard[2][1].equals(playerToken))) {
             return true;
         }
         else if ((gameBoard[0][2].equals(playerToken)) && ((gameBoard[1][2].equals(playerToken))) && (gameBoard[2][2].equals(playerToken))) {
@@ -141,13 +141,25 @@ public class Gameboard_4 {
 
                     if (freeSpace) {
                         writeSquare(gameBoard, coordinates, token);
-                        checkRowsAndColumns(token, gameBoard);
-                        System.out.println(checkRowsAndColumns(token, gameBoard));
-                        playerTurn++;
-                    } else {
+                        if (checkRowsAndColumns(token, gameBoard)) {
+                            printGameBoard(gameBoard);
+                            System.out.println("congratulations " + player + " you win!");
+                            break;
+                        }
+                        else if (!checkRowsAndColumns(token, gameBoard)) {
+                            playerTurn++;
+                            printGameBoard(gameBoard);
+                        }
+
+                    }
+                    else {
                         System.out.println("Space already taken, please choose other coordinates:");
                     }
-                    printGameBoard(gameBoard);
+
+                    if (playerTurn > 9) {
+                        gameIsADraw();
+                    }
+//                    printGameBoard(gameBoard);
 
 
 
@@ -174,7 +186,7 @@ public class Gameboard_4 {
                  */
             }
 
-            gameIsADraw();
+//            gameIsADraw();
 
         }
     }
