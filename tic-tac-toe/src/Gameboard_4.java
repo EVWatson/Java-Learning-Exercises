@@ -98,15 +98,15 @@ public class Gameboard_4 {
 
     public static boolean checkRowsAndColumns(String playerToken, String[][] gameBoard) {
         if (checkRows(playerToken, gameBoard)) {
-            System.out.println("we have a winner!");
+                return true;
         }
         else if (checkColumns(playerToken, gameBoard)) {
-                System.out.println("we have a winner!");
+                return true;
         }
         else {
             return false;
         }
-        return false;
+
     }
 
     public static void main (String[]args) {
@@ -135,7 +135,7 @@ public class Gameboard_4 {
                     int[] coordinates = chooseCoordinates();
                     boolean freeSpace = checkSquare(gameBoard, coordinates);
 
-                    if (freeSpace == true) {
+                    if (freeSpace) {
                         writeSquare(gameBoard, coordinates, token);
                         checkRowsAndColumns(token, gameBoard);
                         System.out.println(checkRowsAndColumns(token, gameBoard));
