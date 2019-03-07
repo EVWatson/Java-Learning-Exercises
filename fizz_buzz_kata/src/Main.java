@@ -1,19 +1,5 @@
 public class Main {
 
-/*    method: print numbers 1 - 100
-
-    method: calculate multiples of 3
-
-    method: print fizz
-
-    method: calculate multiples of 5
-
-    method: print buzz
-
-    method: calculate multiples of 3 and 5
-
-    method: print fizzbuzz
- */
 
 private static void printNumbers (int numbers) {
     System.out.println(numbers);
@@ -40,7 +26,7 @@ private static void printNumbers (int numbers) {
     }
 
     private static boolean isNumberMultipleOf3and5 (int number) {
-        return (isNumberMultipleOf3(number)) && (isNumberMultipleOf5(number));
+        return (isNumberMultipleOf3(number)) & (isNumberMultipleOf5(number));
     }
 
 
@@ -51,7 +37,11 @@ private static void printNumbers (int numbers) {
 
     while (numbers <= 100) {
 
-        if (isNumberMultipleOf3(numbers)) {
+        if (isNumberMultipleOf3and5(numbers)) {
+            printFizzBuzz();
+        }
+
+        else if (isNumberMultipleOf3(numbers)) {
             printFizz();
         }
 
@@ -59,9 +49,6 @@ private static void printNumbers (int numbers) {
             printBuzz();
         }
 
-        else if (isNumberMultipleOf3and5(numbers)) {
-            printFizzBuzz();
-        }
 
         else {
             printNumbers(numbers);
@@ -70,20 +57,6 @@ private static void printNumbers (int numbers) {
         numbers++;
 
     }
-
-
-
-        /*
-        print numbers
-
-        if multiple of 3, print fizz
-
-        if multiple of 5, print buzz
-
-        if multiple of 3 and 5, print fizzbuzz
-
-
-         */
 
 
     }
