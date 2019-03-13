@@ -8,11 +8,7 @@ public class Main {
         String userName = answerQuestion.nextLine();
         System.out.println("Hi " + userName);
     }
-
-
-//    public static void greetUser(){
-//        System.out.println("Hi ");
-//    }
+    
 
     public static void instruction1() {
         System.out.println("Are you a cat or a dog person? ");
