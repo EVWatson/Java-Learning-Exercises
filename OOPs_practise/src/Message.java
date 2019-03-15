@@ -1,23 +1,15 @@
+import java.util.List;
+
 public class Message {
 
-//    String sentence;
-//    public static String userName;
 
     private static String welcomeMessage = "Welcome to Adopt A Pet!";
-    private static String askForUserName = "What is your name?";
-    private static String greetUser = "Hi, ";
-    private static String giveAnimalOptionsMessage = "Choose an animal to adopt:";
+    private static String askForUserName = "\nWhat is your name?";
+    private static String greetUser = "\nHi, ";
+    private static String giveAnimalOptionsMessage = "\nChoose an animal to adopt: ";
+    private static String confirmUserAnimalChoice = "\nYou have chosen a ";
+    private static String displayAvailableChosenAnimals = ("\nWhich would you like to adopt? Please choose one: ");
 
-//    public Message(String sentence) {
-////        this.sentence = sentence;
-////    }
-
-//    Message welcomeMessage = new Message("Welcome to Adopt A Pet");
-//    Message askForUserName = new Message("What is your name?");
-
-//    public String getSentence () {
-//        return sentence;
-//    }
 
     public static String getWelcomeMessage(){
         return welcomeMessage;
@@ -29,6 +21,18 @@ public class Message {
 
     public static String getGreetUser(String userName) {
         return greetUser + userName;
+    }
+
+    public static String getGiveAnimalOptionsMessage() {
+        return giveAnimalOptionsMessage;
+    }
+
+    public static String getConfirmUserAnimalChoice(String animal) {
+        return confirmUserAnimalChoice + animal;
+    }
+
+    public static String getDisplayAvailableChosenAnimals() {
+        return displayAvailableChosenAnimals;
     }
 
 }
