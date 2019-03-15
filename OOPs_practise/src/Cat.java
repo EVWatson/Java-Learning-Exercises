@@ -5,6 +5,7 @@ public class Cat {
     private int age;
     private String colour;
     private String speak;
+    private static String genus = "Catus";
 
      Cat(String name, String breed, int age, String colour, String speak) {
         this.name = name;
@@ -30,8 +31,12 @@ public class Cat {
         return colour;
     }
 
-    public String catSpeaks() {
+    public String getSpeaks() {
         return speak;
+    }
+
+    public static String getGenusStatic(){
+         return genus;
     }
 
 //    public String makeSentence() {
@@ -42,7 +47,7 @@ public class Cat {
 //        for (int biscuits = 10; biscuits > 0; biscuits -- ) {
 //            System.out.println("crunch");
 //        }
-    }
+//    }
 
 
 

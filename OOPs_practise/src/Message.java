@@ -1,26 +1,35 @@
 public class Message {
 
-    private static
+//    String sentence;
+//    public static String userName;
 
-    String sentence;
+    private static String welcomeMessage = "Welcome to Adopt A Pet!";
+    private static String askForUserName = "What is your name?";
+    private static String greetUser = "Hi, ";
+    private static String giveAnimalOptionsMessage = "Choose an animal to adopt:";
 
-    public Message(String sentence) {
-        this.sentence = sentence;
-    }
-//    public static void askForName(){
-//        System.out.println("What is your name?");
-//    }
+//    public Message(String sentence) {
+////        this.sentence = sentence;
+////    }
 
+//    Message welcomeMessage = new Message("Welcome to Adopt A Pet");
+//    Message askForUserName = new Message("What is your name?");
 
-
-//    public String getMessage () {
+//    public String getSentence () {
 //        return sentence;
 //    }
 
+    public static String getWelcomeMessage(){
+        return welcomeMessage;
+    }
 
+    public static String getAskForUserName() {
+        return askForUserName;
+    }
 
-//        System.out.println(welcome.sentence);
-//        System.out.println(askForUserName.sentence);
+    public static String getGreetUser(String userName) {
+        return greetUser + userName;
+    }
 
 }
 
