@@ -14,6 +14,11 @@
   
  - Fizz Buzz
   - begun 7/3
+  - finished 8/3
+  
+ - Adopt a Pet
+  -adpoted my own kata
+  - learning about classes and objects and how they are used and interact with each other
 
 ------------------------------------------------------------------------------------------------------------------------------
 # Goals
