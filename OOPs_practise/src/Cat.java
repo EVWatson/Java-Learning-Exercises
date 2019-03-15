@@ -35,13 +35,7 @@ public class Cat {
         return speak;
     }
 
-    public static String getGenusStatic(){
-         return genus;
-    }
 
-//    public String makeSentence() {
-//        return ("\n Name: " + this.getCatName() + "\n Breed: " + this.getCatBreed() + "\n Age: " + this.getCatAge() + " years" + "\n Colour: " + this.getCatColour() + "\n " + this.getCatName() + " says: " + this.catSpeaks());
-//    }
 //
 //    public static void feedCat() {
 //        for (int biscuits = 10; biscuits > 0; biscuits -- ) {
