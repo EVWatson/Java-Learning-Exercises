@@ -5,7 +5,7 @@ public class Dog {
     String colour;
     String speak;
 
-    private Dog(String name, String breed, int age, String colour, String speak) {
+    Dog(String name, String breed, int age, String colour, String speak) {
         this.name = name;
         this.breed = breed;
         this.age = age;

@@ -43,6 +43,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+
 //        Message welcomeMessage = new Message("Welcome to Adopt A Pet!");
 //        Message askForUserName = new Message("What is your name?");
 
@@ -61,7 +62,6 @@ public class Main {
         printString(Adoption_centre.getAvailableAnimals());
 
         String userChoice = getUserAnimalChoice();
-
 
 //        String animalChoice;
 //
@@ -84,24 +84,49 @@ public class Main {
 //            display message for choice of animal
             printString(Message.getConfirmUserAnimalChoice(choice));
 //            display available cats
-            System.out.println("cats");
-//            printString(Message.getDisplayAvailableChosenAnimals());
+
+            printString(Message.getDisplayAvailableChosenAnimals());
+
+            List<Cat> allCats = Arrays.asList(
+                    new Cat("Louie", "Domestic Short Hair", 3, "Tabby", "Meow!"),
+                    new Cat( "Pepper", "Domestic Short Hair", 3, "Tortoise-Shell", "Purrrrrr"),
+                    new Cat("Freddie", "Burmese", 5, "Champagne", "Meow!"),
+                    new Cat("Stormy Monday", "Domestic Short Hair", 1, "Tabby", "Mreow!"),
+                    new Cat("Philomena", "Domestic Short Hair", 1, "Tabby", "Mew!"));
+
+            for (int c = 0; c < allCats.size(); c++)
+                System.out.println(allCats.get(c).getCatName() + ", " + allCats.get(c).getCatBreed() + ", " + allCats.get(c). getCatColour());
+
+
 //            get user choice of cat
 //            check if user would like to re-name cat
-        } else
-            System.out.println("other options");
+        } else if (userChoice.equals("2")) {
+            String choice = "dog";
+
+            printString(Message.getConfirmUserAnimalChoice(choice));
+
+            printString(Message.getDisplayAvailableChosenAnimals());
+
+            List<Dog> allDogs = Arrays.asList(
+                    new Dog ("Jack", "German Shepherd X Rottweiler", 5, "Tan and black", "Woof woof!"),
+                    new Dog ("Cassy", "Labrador X Cocker Spaniel", 2, "Golden", "Wuff wuff!"),
+                    new Dog ("Lola", "Staffordshire Terrier", 1, "Black", "Woof!"),
+                    new Dog ("Ben", "Poodle X Maltease Terrier", 8, "Brown", "Wuff!"),
+                    new Dog ("Sugar", "Poodle", 4, "White", "Bow wow!")
+            );
+            for (int d = 0; d < allDogs.size(); d++)
+                System.out.println(allDogs.get(d).getDogName() + ", " + allDogs.get(d).getDogBreed() + ", " + allDogs.get(d).getDogColour());
+        }
+
+
 //            options for dogs
     }
 
 
 
 
-        List<Cat> allCats = Arrays.asList(
-        new Cat("Louie", "Domestic Short Hair", 3, "Tabby", "Meow!"),
-        new Cat( "Pepper", "Domestic Short Hair", 3, "Tortoise-Shell", "Purrrrrr"),
-        new Cat("Freddie", "Burmese", 5, "Champagne", "Meow!"),
-        new Cat("Stormy Monday", "Domestic Short Hair", 1, "Tabby", "Mreow!"),
-        new Cat("Philomena", "Domestic Short Hair", 1, "Tabby", "Mew!"));
+
+
 
 
 //        allCats.add(louie);

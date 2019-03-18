@@ -7,7 +7,7 @@ public class FizzTest {
     @Test
     public void getIsNumberMultipleOf3() {
         int input = 9;
-        boolean actualResult = Fizz.getIsNumberMultipleOf3(input);
+        boolean actualResult = Fizz.isNumberMultipleOf3(input);
         assertTrue(actualResult);
     }
 
