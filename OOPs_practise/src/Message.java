@@ -8,7 +8,7 @@ public class Message {
     private static String greetUser = "\nHi, ";
     private static String giveAnimalOptionsMessage = "\nChoose an animal to adopt: ";
     private static String confirmUserAnimalChoice = "\nYou have chosen a ";
-    private static String displayAvailableChosenAnimals = ("\nWhich would you like to adopt? Please choose one: ");
+    private static String displayAvailableChosenAnimals = ("\nWho would you like to adopt? Please choose one: \n");
 
 
     public static String getWelcomeMessage(){
