@@ -4,8 +4,18 @@ public class Fizz {
         return (number % 3 == 0);
     }
 
-    public static String getIsNumberMultipleOf3(){
+    public static boolean getIsNumberMultipleOf3(int number){
         return isNumberMultipleOf3(number);
+    }
+
+    private static String printFizz () {
+
+        System.out.println("Fizz");
+        return "Fizz";
+    }
+
+    public static String getPrintFizz () {
+        return printFizz();
     }
 
 }
