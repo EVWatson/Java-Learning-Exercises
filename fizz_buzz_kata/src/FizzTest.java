@@ -1,20 +1,17 @@
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.*;
 
-
-class FizzTest {
+public class FizzTest {
 
     @Test
-    void getIsNumberMultipleOf3() {
-//        arrange: 9
+    public void getIsNumberMultipleOf3() {
         int input = 9;
-
-//        act: check if this number is amutiple of 3
-       boolean actualResult = Fizz.getIsNumberMultipleOf3(input);
-
-//       assert: i expect to get true
-
+        boolean actualResult = Fizz.getIsNumberMultipleOf3(input);
         assertTrue(actualResult);
     }
+
+//    @Test
+//    public void getPrintFizz() {
+//    }
 }
