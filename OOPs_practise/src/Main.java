@@ -103,6 +103,11 @@ public class Main {
 //            check if user would like to re-name cat
         } else if (userChoice.equals("2")) {
             String choice = "dog";
+
+            printString(Message.getConfirmUserAnimalChoice(choice));
+
+            printString(Message.getDisplayAvailableChosenAnimals());
+
             List<Dog> allDogs = Arrays.asList(
                     new Dog ("Jack", "German Shepherd X Rottweiler", 5, "Tan and black", "Woof woof!"),
                     new Dog ("Cassy", "Labrador X Cocker Spaniel", 2, "Golden", "Wuff wuff!"),

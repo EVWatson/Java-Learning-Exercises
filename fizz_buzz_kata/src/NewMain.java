@@ -14,7 +14,7 @@ public class NewMain {
                 FizzBuzz.getPrintFizzBuzz();
             }
 
-            else if (Fizz.getIsNumberMultipleOf3(numbers)) {
+            else if (Fizz.isNumberMultipleOf3(numbers)) {
                 Fizz.getPrintFizz();
             }
 
