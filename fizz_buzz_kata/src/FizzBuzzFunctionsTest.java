@@ -4,111 +4,26 @@ import static org.junit.Assert.*;
 
 public class FizzBuzzFunctionsTest {
     @Test
-    public void isNumberMultipleOf3_givenMultipleOf3_shouldReturnTrue() {
+    public void determineFizzBuzz_givenAMultipleOf3_ShouldReturnFizz() {
         // Arrange
         int input = 3;
 
         // Act
-        boolean actualResult = FizzBuzzFunctions.isNumberMultipleOf3(input);
+        String actualResult = FizzBuzzFunctions.determineFizzBuzz(input);
 
         // Assert
-        assertTrue(actualResult);
+        assertTrue(actualResult.equals("Fizz"));
     }
 
     @Test
-    public void isNumberMultipleOf3_whenNotGivenMultipleOf3_shouldReturnFalse() {
-//        arrange
-        int input = 4;
-
-//        act
-        boolean actualResult = FizzBuzzFunctions.isNumberMultipleOf3(input);
-
-//        assert
-        assertFalse(actualResult);
-    }
-
-    @Test
-    public void isNumberMultipleOf5_whenGivenMultipleOf5_shouldReturnTrue() {
-        //        arrange
-        int input = 20;
-
-//        act
-        boolean actualResult = FizzBuzzFunctions.isNumberMultipleOf5(input);
-
-//        run
-        assertTrue(actualResult);
-    }
-
-    @Test
-    public void isNumberMultipleOf5_whenNotGivenMultipleOf5_shouldReturnFalse() {
-        //        arrange
-        int input = 21;
-
-//        act
-        boolean actualResult = FizzBuzzFunctions.isNumberMultipleOf5(input);
-
-//        run
-        assertFalse(actualResult);
-    }
-
-//should it either return true but be over-ridden by isNumberMultipleOf3and5, or return false even though it is a multiple of 15?? And does it matter for this kata seeing as the loop checks for a multiple of both 3 and 5 first?
-    @Test
-    public void isNumberMultipleOf5_whenGivenMultipleOf5ButAlso3_shouldReturnFalse () {
-        //        arrange
+    public void determineFizzBuzz_givenAMultipleOf3and5_ShouldReturnFizzBuzz() {
+        // Arrange
         int input = 15;
 
-//        act
-        boolean actualResult = FizzBuzzFunctions.isNumberMultipleOf5(input);
+        // Act
+        String actualResult = FizzBuzzFunctions.determineFizzBuzz(input);
 
-//        run
-        assertFalse(actualResult);
-    }
-
-    @Test
-    public void isNumberMultipleOf3and5_whenGivenMultipleOfBoth3and5_shouldReturnTrue() {
-//        arrange
-        int input = 15;
-
-//        act
-        boolean actualResult = FizzBuzzFunctions.isNumberMultipleOf3and5(input);
-
-//        assert
-
-        assertTrue(actualResult);
-    }
-
-    @Test
-    public void isNumberMultipleOf3and5_whenGivenMultipleOf3Only_shouldReturnFalse() {
-//        arrange
-        int input = 6;
-
-//        act
-        boolean actualResult = FizzBuzzFunctions.isNumberMultipleOf3and5(input);
-//         assert
-        assertFalse(actualResult);
-    }
-
-    @Test
-    public void isNumberMultipleOf3and5_whenGivenMultipleOf5Only_shouldReturnFalse() {
-//        arrange
-        int input = 20;
-
-//        act
-        boolean actualResult = FizzBuzzFunctions.isNumberMultipleOf3and5(input);
-
-//        run
-        assertFalse(actualResult);
-    }
-
-    @Test
-    public void isNumberMultipleOf3and5_whenGivenNoMultiplesOf3and5_shouldReturnFalse() {
-        //        arrange
-        int input = 7;
-
-//        act
-        boolean actualResult = FizzBuzzFunctions.isNumberMultipleOf3and5(input);
-
-//        run
-        assertFalse(actualResult);
+        // Assert
+        assertTrue(actualResult.equals("FizzBuzz"));
     }
 }

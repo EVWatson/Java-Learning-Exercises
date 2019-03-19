@@ -1,13 +1,20 @@
 public class FizzBuzzFunctions {
-    public static boolean isNumberMultipleOf3 (int number) {
-        return (number % 3 == 0);
+    public static String determineFizzBuzz(int numbers) {
+        if (MathsFunctions.isNumberMultipleOf3and5(numbers)) {
+            return "FizzBuzz";
+        }
+        else if (MathsFunctions.isNumberMultipleOf3(numbers)) {
+            return "Fizz";
+        }
+        else if (MathsFunctions.isNumberMultipleOf5(numbers)) {
+            return "Buzz";
+        }
+        else {
+            return convertToString(numbers);
+        }
     }
 
-    public static boolean isNumberMultipleOf5 (int number) {
-        return (number % 5 == 0);
-    }
-
-    public static boolean isNumberMultipleOf3and5 (int number) {
-        return (isNumberMultipleOf3(number)) & (isNumberMultipleOf5(number));
+    private static String convertToString (int numbers) {
+        return Integer.toString(numbers);
     }
 }
