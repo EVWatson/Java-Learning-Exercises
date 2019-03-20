@@ -20,13 +20,13 @@ public class FizzBuzzFunctionsTest {
 //    is this one right?
 
     @Test
-    public void determineFizz_givenNoMultiplesOf3_shouldReturnFalseAndPrintIntInstead() {
+    public void determineFizz_givenNoMultiplesOf3_shouldReturnIntAsString() {
         //        arrange
         int input = 4;
 //        act
         String actualResult = FizzBuzzFunctions.determineFizzBuzz(input);
 //        assert
-        assertFalse(actualResult, false);
+        assertTrue("non-multiple of 3 or 5 did not return number", actualResult.equals("4"));
     }
 
     @Test
