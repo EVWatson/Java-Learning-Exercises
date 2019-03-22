@@ -7,6 +7,13 @@ public class Block {
   private int blockHeight;
 
 
+  public Block(int width, int length, int height)
+  {
+      this.blockWidth = width;
+      this.blockLength = length;
+      this.blockHeight = height;
+  }
+
   public Block (int [] blockDimensions) {
       this.blockWidth = blockDimensions[0];
       this.blockLength = blockDimensions[1];
