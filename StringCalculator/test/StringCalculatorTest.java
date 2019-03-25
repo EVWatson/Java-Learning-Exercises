@@ -1,5 +1,7 @@
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +13,9 @@ public class StringCalculatorTest {
     public void setUp() {
         this.calculator = new StringCalculator();
     }
+
+    @Rule
+    public ExpectedException exceptionRule = ExpectedException.none();
 
     @Test
     public void methodAdd_whenGivenAnEmptyString_shouldReturn0() {
@@ -72,16 +77,23 @@ public class StringCalculatorTest {
 
     @Test
     public void methodAdd_whenNegativeNumbers_shouldThrowExceptionWithNegativeNumbers() {
-        int result = calculator.add("-1,2,-3");
-
-//        assertEquals(3, result);
+        exceptionRule.expect(IllegalArgumentException.class);
+        exceptionRule.expectMessage("Negative numbers not allowed: -1, -3");
+        calculator.add("-1,2,-3");
     }
 
     @Test
     public void methodAdd_whenNegativeNumbersAndCustomDelimiter_shouldThrowExceptionWithNegativeNumbers() {
-        int result = calculator.add("//;\n-1;2;-3");
+        exceptionRule.expect(IllegalArgumentException.class);
+        exceptionRule.expectMessage("Negative numbers not allowed: -1, -3");
+        calculator.add("//;\n-1;2;-3");
+    }
 
-//        assertEquals(3, result);
+    @Test
+    public void methodAdd_whenMoreNegativeNUmbersGiven_shouldThrowExceptionWithNegativeNumbers() {
+        exceptionRule.expect(IllegalArgumentException.class);
+        exceptionRule.expectMessage("Negative numbers not allowed: -1, -3, -5, -4");
+        calculator.add("//;\n-1;2;-3;-5;6;1;-4");
     }
 //    arrange
 //    act
