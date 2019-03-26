@@ -1,4 +1,3 @@
-import java.text.MessageFormat;
 import java.util.ArrayList;
 
 public class StringCalculator {
@@ -15,14 +14,15 @@ public class StringCalculator {
         if(!errorNumbers.isEmpty()){
 //            errorNumbers = ["-1", "-3"]
             String stringOfErrors = "";
-            String errorMessage = String.format("Negative numbers not allowed: %s", stringOfErrors);
+
+
             for (int i = 0; i < errorNumbers.size();i++){
 //                conditional formatting here
 
-                    errorMessage = errorMessage.concat(errorNumbers.get(i));
-
+                String punctuation = ", ";
+                    stringOfErrors = stringOfErrors.concat(errorNumbers.get(i) + punctuation);
             }
-            throw new IllegalArgumentException(errorMessage);
+            throw new IllegalArgumentException("Negative numbers not allowed: " + stringOfErrors);
         }
         return sum;
     }
