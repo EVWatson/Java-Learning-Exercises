@@ -3,6 +3,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.regex.MatchResult;
+
 import static org.junit.Assert.*;
 
 public class StringCalculatorTest {
@@ -92,7 +94,7 @@ public class StringCalculatorTest {
     @Test
     public void methodAdd_whenMoreNegativeNUmbersGiven_shouldThrowExceptionWithNegativeNumbers() {
         exceptionRule.expect(IllegalArgumentException.class);
-        exceptionRule.expectMessage("Negative numbers not allowed: -1, -3, -5, -4");
+        exceptionRule.expectMessage(("Negative numbers not allowed: -1, -3, -5, -4"));
         calculator.add("//;\n-1;2;-3;-5;6;1;-4");
     }
 //    arrange
