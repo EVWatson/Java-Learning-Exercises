@@ -3,10 +3,9 @@ import java.util.regex.Pattern;
 
 public class StringCalculator {
 
+static final String REGEX = "[,\n;!@#$%&*]";
 
 
-
-//    private String delimiter = "\\d";
 
 
     public int add(String input) {
@@ -15,15 +14,13 @@ public class StringCalculator {
             return 0;
 
         }
-        String [] numbers = input.split("[,\n;]");
+        String [] numbers = input.split(REGEX);
         String numbers2;
 //        input.matches("^//");
 
             if (input.startsWith("//")) {
              numbers2 = input.substring(4);
-             System.out.println(numbers2);
-             numbers = numbers2.split(";");
-//^//(.)"       java pattern.compile
+             numbers = numbers2.split(REGEX);
             }
 
             int sum = 0;
