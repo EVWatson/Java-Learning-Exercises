@@ -40,4 +40,16 @@ public class StringCalculatorTest {
         assertEquals(20, result);
     }
 
+    @Test
+    public void methodAdd_whenGivenLineBreaksAndCommasBetweenIntegers_shouldReturnSumOfTheIntegers () {
+        int result = calculator.add("1,2\n3");
+        assertEquals(6, result);
+    }
+
+    @Test
+    public void methodAdd_whenGivenDifferentDelimiters_shouldReturnSumOfNumbers () {
+        int result = calculator.add("//;\n1;2");
+        assertEquals(3, result);
+    }
+
 }
