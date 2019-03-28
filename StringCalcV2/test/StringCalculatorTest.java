@@ -65,4 +65,16 @@ public class StringCalculatorTest {
         calculator.add("-1,2,-3");
     }
 
+    @Test
+    public void methodAdd_whenGivenNumbersGreaterOrEqualTo1000_willIgnoreThoseNumbers () {
+        int result = calculator.add("1000,1001,2");
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void methodAdd_whenGivenDeliminatorsOfAnyLength_willReturnSumOfNumbers() {
+        int result = calculator.add("//[***]\n1***2***3");
+        assertEquals(6, result);
+    }
+
 }
