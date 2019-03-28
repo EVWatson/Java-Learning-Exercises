@@ -2,11 +2,8 @@ import java.util.ArrayList;
 
 public class StringCalculator {
 
-static final String REGEX = "[,\n;!@#$%&*]+";
-static final String NEGATIVENUMEXCEPTION = "Negatives not allowed: ";
-
-
-
+static final String REGEX = "[,\n;!@#$%&*][(.)(\\d)(.)]+";
+static final String EXCEPTION_MESSAGE = "Negatives not allowed: ";
 
     public int add(String input) {
 
@@ -16,6 +13,7 @@ static final String NEGATIVENUMEXCEPTION = "Negatives not allowed: ";
 
         String [] numbers = input.split(REGEX);
 //        input.matches("^//");
+
 
             if (input.startsWith("//")) {
 //             numbers2 = input.substring(4);
@@ -44,7 +42,7 @@ static final String NEGATIVENUMEXCEPTION = "Negatives not allowed: ";
             }
              if (!negativeNumbers.isEmpty()) {
 
-            throw new ArithmeticException(NEGATIVENUMEXCEPTION + negativeNumbers);
+            throw new ArithmeticException(EXCEPTION_MESSAGE + negativeNumbers);
               }
 
             return sum;

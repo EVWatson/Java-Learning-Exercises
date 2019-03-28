@@ -72,8 +72,26 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void methodAdd_whenGivenDeliminatorsOfAnyLength_willReturnSumOfNumbers() {
+    public void methodAdd_whenGivenDelimitersOfAnyLength_willReturnSumOfNumbers() {
         int result = calculator.add("//[***]\n1***2***3");
+        assertEquals(6, result);
+    }
+
+    @Test
+    public void  methodAdd_whenGivenMultipleDifferentDelimitors_willReturn_willReturnSumOfNumbers() {
+        int result = calculator.add("//[*][%]\n1*2%3");
+        assertEquals(6, result);
+    }
+
+    @Test
+    public void methodAdd_whenGivenMultipleDelmitersWithLengthLongerThanOneCharacter_willReturnSumOfNumbers() {
+        int result = calculator.add("//[***][#][%]\n1***2#3%4");
+        assertEquals(10, result);
+    }
+
+    @Test
+    public void methodAdd_whenGivenDelimitersThatHaveNumbersAsPartOfThem_whereNumberCannotBeOnEdgeOfDelimiter_willReturnSumOfNonDelimiterNumbers() {
+        int result = calculator.add("//[*1*][%]\n1*1*2%3");
         assertEquals(6, result);
     }
 
