@@ -1,11 +1,17 @@
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class StringCalculatorTest {
 
     private StringCalculator calculator;
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Before
     public void setUp() {
@@ -50,6 +56,25 @@ public class StringCalculatorTest {
     public void methodAdd_whenGivenDifferentDelimiters_shouldReturnSumOfNumbers () {
         int result = calculator.add("//;\n1;2");
         assertEquals(3, result);
+    }
+
+    @Test
+    public void methodAdd_whenGivenOneOrMoreNegativeNumbers_willThrowException () {
+        thrown.expect(ArithmeticException.class);
+        thrown.expectMessage(is("Negatives not allowed: [-1, -3]"));
+        calculator.add("-1,2,-3");
+    }
+
+    @Test
+    public void methodAdd_whenGivenNumbersGreaterOrEqualTo1000_willIgnoreThoseNumbers () {
+        int result = calculator.add("1000,1001,2");
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void methodAdd_whenGivenDeliminatorsOfAnyLength_willReturnSumOfNumbers() {
+        int result = calculator.add("//[***]\n1***2***3");
+        assertEquals(6, result);
     }
 
 }
