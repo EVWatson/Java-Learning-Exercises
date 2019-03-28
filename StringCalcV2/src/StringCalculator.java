@@ -1,9 +1,11 @@
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
 
 static final String REGEX = "[,\n;!@#$%&*]";
+static final String NEGATIVENUMEXCEPTION = "Negatives not allowed: ";
 
 
 
@@ -24,10 +26,20 @@ static final String REGEX = "[,\n;!@#$%&*]";
             }
 
             int sum = 0;
+            ArrayList <String> negativeNumbers = new ArrayList<>();
+
             for (String s : numbers ) {
                 int number = Integer.parseInt(s);
+
+                if ( number < 0) {
+                    negativeNumbers.add(s);
+                }
                 sum += number;
             }
+             if (!negativeNumbers.isEmpty()) {
+
+            throw new ArithmeticException(NEGATIVENUMEXCEPTION + negativeNumbers);
+              }
 
             return sum;
     }
