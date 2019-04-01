@@ -59,6 +59,12 @@ public class StringCalculatorTest {
     }
 
     @Test
+    public void methodAdd2_whenGivenDifferentDelimiters_shouldReturnSumOfNumbers () {
+        int result = calculator.add("//-\n1-2");
+        assertEquals(3, result);
+    }
+
+    @Test
     public void methodAdd_whenGivenOneOrMoreNegativeNumbers_willThrowException () {
         thrown.expect(ArithmeticException.class);
         thrown.expectMessage(is("Negatives not allowed: [-1, -3]"));
@@ -91,7 +97,7 @@ public class StringCalculatorTest {
 
     @Test
     public void methodAdd_whenGivenDelimitersThatHaveNumbersAsPartOfThem_whereNumberCannotBeOnEdgeOfDelimiter_willReturnSumOfNonDelimiterNumbers() {
-        int result = calculator.add("//[*1*][%]\n1*1*2%3");
+        int result = calculator.add("//[%1%][%]\n1%1%2%3");
         assertEquals(6, result);
     }
 
