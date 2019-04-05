@@ -81,7 +81,21 @@ public class BoardTest {
     }
 
     @Test
-    public void methodCreateBoard_whenGivenNumberOfRowsAndColumns_returnsArrayOfStringsWithCorrectNumnberOfRowsAndColumns(){
+    public void methodCreateBoard_whenGivenNumberOfRowsAndColumns_returnsArrayOfStringsWithCorrectNumberOfRowsAndColumns(){
 
+        Board currentBoard = new Board(6, 6);
+
+        String[][] expectedResult = {
+                {"*", "*", "*", "*", "*", "*"},
+                {"*", "*", "*", "*", "*", "*"},
+                {"*", "*", "*", "*", "*", "*"},
+                {"*", "*", "*", "*", "*", "*"},
+                {"*", "*", "*", "*", "*", "*"},
+                {"*", "*", "*", "*", "*", "*"}
+        };
+
+        String[][] actualResult = currentBoard.createBoard(currentBoard.getTotalRows(),currentBoard.getTotalColumns());
+
+        assertArrayEquals(expectedResult, actualResult);
     }
 }
