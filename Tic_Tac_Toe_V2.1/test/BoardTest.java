@@ -116,8 +116,8 @@ public class BoardTest {
 
 @Test
     public void methodWhatIsCurrentBoard_whenGivenCurrentBoardObjectOfAnySize_returnsAStringWithCorrectFormatting(){
-    Board currentBoard = new Board(3, 4);
-    String expectedResult =  "* * * *\n* * * *\n* * * *";
+    Board currentBoard = new Board(3, 2);
+    String expectedResult =  "* *\n* *\n* *";
 
     String actualResult = currentBoard.whatIsTheCurrentBoard();
 
