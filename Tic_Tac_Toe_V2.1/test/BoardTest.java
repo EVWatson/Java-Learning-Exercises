@@ -97,5 +97,34 @@ public class BoardTest {
         String[][] actualResult = currentBoard.createBoard(currentBoard.getTotalRows(),currentBoard.getTotalColumns());
 
         assertArrayEquals(expectedResult, actualResult);
+
     }
+
+@Test
+    public void methodWhatIsCurrentBoard_whenGivenCurrentBoardObject_returnsAStringWithCorrectFormatting() {
+
+    Board currentBoard = new Board(3, 3);
+
+    String expectedResult = "* * *\n* * *\n* * *";
+
+    String actualResult = currentBoard.whatIsTheCurrentBoard();
+
+    System.out.println(actualResult);
+
+    assertEquals(expectedResult, actualResult);
+}
+
+@Test
+    public void methodWhatIsCurrentBoard_whenGivenCurrentBoardObjectOfAnySize_returnsAStringWithCorrectFormatting(){
+    Board currentBoard = new Board(3, 4);
+    String expectedResult =  "* * * *\n* * * *\n* * * *";
+
+    String actualResult = currentBoard.whatIsTheCurrentBoard();
+
+    System.out.println(actualResult);
+
+    assertEquals(expectedResult, actualResult);
+}
+
+
 }

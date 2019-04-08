@@ -20,11 +20,30 @@ public class Board {
         for (int row = 0; row < newBoard.length; row ++) {
             for (int column = 0; column < newBoard[row].length; column++) {
                 newBoard[row][column] = "*";
+
             }
         }
 
         return newBoard;
     }
+
+    public String whatIsTheCurrentBoard() {
+        String formattedBoard = "";
+        for (int row = 0; row < currentBoard.length; row++){
+           for (int column = 0; column < currentBoard.length; column++) {
+               if (column < currentBoard.length -1) {
+                   formattedBoard = formattedBoard.concat(currentBoard[row][column] + " ");
+               } else {
+                   formattedBoard = formattedBoard.concat(currentBoard[row][column]);
+               }
+           }
+           if (row < currentBoard.length - 1) {
+               formattedBoard = formattedBoard + "\n";
+           }
+        }
+        return formattedBoard;
+    }
+
 
     public int getTotalRows() {
         return totalRows;
