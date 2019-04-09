@@ -80,25 +80,6 @@ public class BoardTest {
         assertArrayEquals(expectedResult, actualResult);
     }
 
-    @Test
-    public void methodCreateBoard_whenGivenNumberOfRowsAndColumns_returnsArrayOfStringsWithCorrectNumberOfRowsAndColumns(){
-
-        Board currentBoard = new Board(6, 6);
-
-        String[][] expectedResult = {
-                {"*", "*", "*", "*", "*", "*"},
-                {"*", "*", "*", "*", "*", "*"},
-                {"*", "*", "*", "*", "*", "*"},
-                {"*", "*", "*", "*", "*", "*"},
-                {"*", "*", "*", "*", "*", "*"},
-                {"*", "*", "*", "*", "*", "*"}
-        };
-
-        String[][] actualResult = currentBoard.createBoard(currentBoard.getTotalRows(),currentBoard.getTotalColumns());
-
-        assertArrayEquals(expectedResult, actualResult);
-
-    }
 
 @Test
     public void methodWhatIsCurrentBoard_whenGivenCurrentBoardObject_returnsAStringWithCorrectFormatting() {
@@ -125,6 +106,8 @@ public class BoardTest {
 
     assertEquals(expectedResult, actualResult);
 }
+
+
 
 
 }

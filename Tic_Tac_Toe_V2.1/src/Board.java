@@ -14,7 +14,7 @@ public class Board {
 
 //    made createBoard public in order to test it
 
-    public String[][] createBoard(int rowSize, int columnSize){
+    private String[][] createBoard(int rowSize, int columnSize){
         String[][] newBoard = new String[rowSize][columnSize];
 
         for (int row = 0; row < newBoard.length; row ++) {
