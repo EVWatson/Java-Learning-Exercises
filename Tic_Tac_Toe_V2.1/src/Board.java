@@ -27,7 +27,7 @@ public class Board {
         return newBoard;
     }
 
-    public String whatIsTheCurrentBoard() {
+    public String getBoardStateAsString() {
         String formattedBoard = "";
         for (int row = 0; row < currentBoard.length; row++){
            for (int column = 0; column < currentBoard[row].length; column++) {
@@ -43,6 +43,16 @@ public class Board {
         }
         return formattedBoard;
     }
+
+    private int convertInputToCoordinates(int coordinate){
+        return coordinate-1;
+    }
+
+    // TODO 1. Write tests to implement update a board space
+    public void updateBoardSpace(int x, int y, String token){
+
+    }
+
 
 
     public int getTotalRows() {

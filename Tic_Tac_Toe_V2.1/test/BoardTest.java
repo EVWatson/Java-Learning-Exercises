@@ -82,13 +82,13 @@ public class BoardTest {
 
 
 @Test
-    public void methodWhatIsCurrentBoard_whenGivenCurrentBoardObject_returnsAStringWithCorrectFormatting() {
+    public void methodGetBoardStateAsString_whenGivenCurrentBoardObject_returnsAStringWithCorrectFormatting() {
 
     Board currentBoard = new Board(3, 3);
 
     String expectedResult = "* * *\n* * *\n* * *";
 
-    String actualResult = currentBoard.whatIsTheCurrentBoard();
+    String actualResult = currentBoard.getBoardStateAsString();
 
     System.out.println(actualResult);
 
@@ -96,11 +96,11 @@ public class BoardTest {
 }
 
 @Test
-    public void methodWhatIsCurrentBoard_whenGivenCurrentBoardObjectOfAnySize_returnsAStringWithCorrectFormatting(){
+    public void methodGetBoardStateAsString_whenGivenCurrentBoardObjectOfAnySize_returnsAStringWithCorrectFormatting(){
     Board currentBoard = new Board(3, 2);
     String expectedResult =  "* *\n* *\n* *";
 
-    String actualResult = currentBoard.whatIsTheCurrentBoard();
+    String actualResult = currentBoard.getBoardStateAsString();
 
     System.out.println(actualResult);
 
