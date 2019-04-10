@@ -112,11 +112,15 @@ public class BoardTest {
     Board currentBoard = new Board(3, 3);
     currentBoard.updateBoardSpace(1, 1, "X");
 
-    String expectedResult = "X * *\n* * *\n* * *";
+    String[][] expectedResult = {
+            {"X", "*", "*"},
+            {"*", "*", "*"},
+            {"*", "*", "*"}
+    };
 
-    String actualResutl = currentBoard.getBoardStateAsString();
+    String[][] actualResult = currentBoard.getCurrentBoard();
 
-    assertEquals(expectedResult, actualResutl);
+    assertArrayEquals(expectedResult, actualResult);
 
 }
 
@@ -125,11 +129,15 @@ public class BoardTest {
         Board currentBoard = new Board(3, 3);
         currentBoard.updateBoardSpace(3, 1, "O");
 
-        String expectedResult = "* * *\n* * *\nO * *";
+        String[][] expectedResult = {
+                {"*", "*", "*"},
+                {"*", "*", "*"},
+                {"O", "*", "*"}
+        };
 
-        String actualResutl = currentBoard.getBoardStateAsString();
+        String[][] actualResutl = currentBoard.getCurrentBoard();
 
-        assertEquals(expectedResult, actualResutl);
+        assertArrayEquals(expectedResult, actualResutl);
 
     }
 
