@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Board {
 
     private String[][] currentBoard;
@@ -44,14 +46,16 @@ public class Board {
         return formattedBoard;
     }
 
-    private int convertInputToCoordinates(int coordinate){
-        return coordinate-1;
-    }
+//    private int convertInputToCoordinates(String userInput){
+////
+////
+////    }
 
     // TODO 1. Write tests to implement update a board space
     public void updateBoardSpace(int x, int y, String token){
+        currentBoard[x-1][y-1] = token;
+        }
 
-    }
 
 
 
