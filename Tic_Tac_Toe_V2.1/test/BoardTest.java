@@ -107,6 +107,34 @@ public class BoardTest {
     assertEquals(expectedResult, actualResult);
 }
 
+@Test
+    public void methodUpdateBoardSpace_whenGivenXAndYCoordinatesAndAToken_overwritesTheSymbolAtThatArrayIndexPosition(){
+    Board currentBoard = new Board(3, 3);
+    currentBoard.updateBoardSpace(1, 1, "X");
+
+    String expectedResult = "X * *\n* * *\n* * *";
+
+    String actualResutl = currentBoard.getBoardStateAsString();
+
+    assertEquals(expectedResult, actualResutl);
+
+}
+
+    @Test
+    public void methodUpdateBoardSpace_whenGivenDifferentXAndYCoordinatesAndTheOtherToken_overwritesTheSymbolAtThatArrayIndexPosition(){
+        Board currentBoard = new Board(3, 3);
+        currentBoard.updateBoardSpace(3, 1, "O");
+
+        String expectedResult = "* * *\n* * *\nO * *";
+
+        String actualResutl = currentBoard.getBoardStateAsString();
+
+        assertEquals(expectedResult, actualResutl);
+
+    }
+
+//    test the above with the 2D array output
+
 
 
 
