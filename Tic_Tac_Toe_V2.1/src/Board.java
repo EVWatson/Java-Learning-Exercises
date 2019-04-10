@@ -12,17 +12,48 @@ public class Board {
         this.currentBoard = createBoard(totalRows, totalColumns);
     }
 
+//    made createBoard public in order to test it
+
     private String[][] createBoard(int rowSize, int columnSize){
         String[][] newBoard = new String[rowSize][columnSize];
 
         for (int row = 0; row < newBoard.length; row ++) {
             for (int column = 0; column < newBoard[row].length; column++) {
                 newBoard[row][column] = "*";
+
             }
         }
 
         return newBoard;
     }
+
+    public String getBoardStateAsString() {
+        String formattedBoard = "";
+        for (int row = 0; row < currentBoard.length; row++){
+           for (int column = 0; column < currentBoard[row].length; column++) {
+               if (column < currentBoard[row].length -1) {
+                   formattedBoard = formattedBoard.concat(currentBoard[row][column] + " ");
+               } else {
+                   formattedBoard = formattedBoard.concat(currentBoard[row][column]);
+               }
+           }
+           if (row < currentBoard.length - 1) {
+               formattedBoard = formattedBoard + "\n";
+           }
+        }
+        return formattedBoard;
+    }
+
+    private int convertInputToCoordinates(int coordinate){
+        return coordinate-1;
+    }
+
+    // TODO 1. Write tests to implement update a board space
+    public void updateBoardSpace(int x, int y, String token){
+
+    }
+
+
 
     public int getTotalRows() {
         return totalRows;
