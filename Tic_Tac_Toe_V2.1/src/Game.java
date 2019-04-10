@@ -6,6 +6,7 @@ public class Game {
     private Board gameBoard;
     private Player player1;
     private Player player2;
+    private Player nextPlayer;
 
     public Game() {
         this.numberOfMoves = 0;
@@ -14,6 +15,11 @@ public class Game {
         this.gameBoard = new Board(3, 3);
         this.player1 = new Player("Alex", "X");
         this.player2 = new Player("Emily", "O");
+        this.nextPlayer = this.player1;
+    }
+
+    public void applyMove (int x, int y){
+        this.gameBoard.updateBoardSpace(x, y, this.nextPlayer.getToken());
     }
 
     public Integer getNumberOfMoves() {
@@ -38,5 +44,9 @@ public class Game {
 
     public Player getPlayer2() {
         return player2;
+    }
+
+    public Player getNextPlayer() {
+        return this.nextPlayer;
     }
 }

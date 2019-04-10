@@ -37,6 +37,22 @@ public class GameTest {
     }
 
 
+    @Test
+    public void applyMove_whenGivenCoordinates_thenShouldUpdateBoardWithCoordinatesAndNextPlayerToken() {
+        // Arrange
+        Game game = new Game();
+        Player nextPlayer = game.getNextPlayer();
+        String nextPlayerToken = nextPlayer.getToken();
 
+        Board expectedBoard = new Board(3,3);
+        expectedBoard.updateBoardSpace(1,1, nextPlayerToken);
+
+        // Act
+        game.applyMove(1, 1);
+
+        // Assert
+        Board actualBoard = game.getGameBoard();
+        assertEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
+    }
 
 }
