@@ -8,6 +8,7 @@ public class Game {
     private Player player2;
     private Player nextPlayer;
 
+
     public Game() {
         this.numberOfMoves = 0;
         this.isCompleted = false;
@@ -19,14 +20,21 @@ public class Game {
     }
 
     public void applyMove (int x, int y){
+
         this.gameBoard.updateBoardSpace(x, y, this.nextPlayer.getToken());
     }
 
+    public boolean isBoardSpaceFree(int x, int y){
+            return this.gameBoard.getBoardSpaceContents(x, y).equals( "*");
+    }
+
     public Integer getNumberOfMoves() {
+
         return numberOfMoves;
     }
 
     public boolean getIsCompleted() {
+
         return isCompleted;
     }
 
@@ -35,18 +43,22 @@ public class Game {
     }
 
     public Board getGameBoard() {
+
         return gameBoard;
     }
 
     public Player getPlayer1() {
+
         return player1;
     }
 
     public Player getPlayer2() {
+
         return player2;
     }
 
     public Player getNextPlayer() {
+
         return this.nextPlayer;
     }
 }

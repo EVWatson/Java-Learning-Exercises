@@ -1,12 +1,19 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class GameTest {
 
+    private Game game;
+
+    @Before
+    public void setUp(){
+        this.game = new Game();
+    }
+
     @Test
     public void gameClass_whenInstanciated_numberOfMovesIsZero() {
-        Game game = new Game();
         Integer actual = game.getNumberOfMoves();
         Integer expected = 0;
         assertEquals(expected, actual);
@@ -22,7 +29,6 @@ public class GameTest {
 
     @Test
     public void gameClass_whenInstanciated_isCompletedIsFalse() {
-        Game game = new Game();
         boolean actual = game.getIsCompleted();
         boolean expected = false;
         assertEquals(expected, actual);
@@ -30,7 +36,6 @@ public class GameTest {
 
     @Test
     public void gameClass_whenInstanciated_winnerShouldBeNull() {
-        Game game = new Game();
         Player actual = game.getWinner();
         Player expected = null;
         assertEquals(expected, actual);
@@ -38,11 +43,10 @@ public class GameTest {
 
 
     @Test
-    public void applyMove_whenGivenCoordinates_thenShouldUpdateBoardWithCoordinatesAndNextPlayerToken() {
+    public void applyMove_whenGivenCoordinates_shouldUpdateGameBoardAtThatPositionWithTheNextPlayerToken() {
         // Arrange
-        Game game = new Game();
-        Player nextPlayer = game.getNextPlayer();
-        String nextPlayerToken = nextPlayer.getToken();
+//        Player nextPlayer = game.getNextPlayer();
+        String nextPlayerToken = game.getNextPlayer().getToken();
 
         Board expectedBoard = new Board(3,3);
         expectedBoard.updateBoardSpace(1,1, nextPlayerToken);
@@ -53,6 +57,24 @@ public class GameTest {
         // Assert
         Board actualBoard = game.getGameBoard();
         assertEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
+    }
+
+    @Test
+    public void isBoardSpaceFree_whenGivenCoordinates_returnsTrueWhenASpaceIsFree(){
+
+        boolean actualResult = game.isBoardSpaceFree(1,1);
+
+        assertTrue(actualResult);
+    }
+
+    @Test
+    public void isBoardSpaceFree_whenGivenCoordinates_returnsFalseWhenASpaceIsOccupiedByAPlayerToken(){
+
+        game.getGameBoard().;
+
+        boolean actualResult = game.isBoardSpaceFree(1,1);
+
+        assertFalse(actualResult);
     }
 
 }
