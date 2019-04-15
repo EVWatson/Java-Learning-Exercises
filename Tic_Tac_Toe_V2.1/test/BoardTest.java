@@ -149,11 +149,22 @@ public class BoardTest {
 
         String expectedResult = "*";
 
-        String actualResult = currentBoard.getBoardSpaceContents(1, 1);;
+        String actualResult = currentBoard.getBoardSpaceContents(1, 1);
 
         assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void getBoardSpaceContents_whenGivenCoordinates_returnsTheTokenAtThatPosition() {
+        Board currentBoard = new Board(3, 3);
+        currentBoard.updateBoardSpace(1, 1, "X");
 
+        String expectedResult = "X";
+
+        String actualResult = currentBoard.getBoardSpaceContents(1, 1);
+
+
+        assertEquals(expectedResult, actualResult);
+    }
 
 }

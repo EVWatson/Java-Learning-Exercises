@@ -70,7 +70,7 @@ public class GameTest {
     @Test
     public void isBoardSpaceFree_whenGivenCoordinates_returnsFalseWhenASpaceIsOccupiedByAPlayerToken(){
 
-        game.getGameBoard().;
+        game.getGameBoard().updateBoardSpace(1, 1, "X");
 
         boolean actualResult = game.isBoardSpaceFree(1,1);
 

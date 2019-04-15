@@ -62,7 +62,7 @@ public class Board {
 
 
     public String getBoardSpaceContents(int x, int y) {
-        return currentBoard[x][y];
+        return currentBoard[x-1][y-1];
     }
 
     public int getTotalRows() {
