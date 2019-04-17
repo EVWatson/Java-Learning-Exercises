@@ -20,9 +20,10 @@ public class Game {
     }
 
     public void applyMove (int x, int y){
-
         this.gameBoard.updateBoardSpace(x, y, this.nextPlayer.getToken());
     }
+
+//    move isBoardSpaceFree to Board
 
     public boolean isBoardSpaceFree(int x, int y){
             return this.gameBoard.getBoardSpaceContents(x, y).equals( "*");
