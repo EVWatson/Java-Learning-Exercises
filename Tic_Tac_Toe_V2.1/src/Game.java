@@ -7,6 +7,7 @@ public class Game {
     private Player player1;
     private Player player2;
     private Player nextPlayer;
+    private ConsoleView message;
 
 
     public Game() {
@@ -17,6 +18,7 @@ public class Game {
         this.player1 = new Player("Alex", "X");
         this.player2 = new Player("Emily", "O");
         this.nextPlayer = this.player1;
+        this.message = new ConsoleView();
     }
 
     public void applyMove (int x, int y){

@@ -20,30 +20,10 @@ public class ConsoleView {
 //    initialise new game
 //    print starting board
 
-    private Game newGame;
     private String message;
 
-    enum GameState {
-        NewGame,
-        InProgress,
-        GameOver,
-    }
-
-    public ConsoleView(GameState state) {
-        this.newGame = new Game();
+    public ConsoleView() {
         this.message = message;
-
-        state = GameState.NewGame;
-
-        switch(state){
-
-            case NewGame:
-                break;
-            case InProgress:
-                break;
-            case GameOver:
-                break;
-        }
     }
 
 //    asks game 'are we there yet?'
@@ -56,13 +36,7 @@ public class ConsoleView {
         return playerResponse;
     }
 
-    public static int[] parseStringCoordsToInt(String playerInput) {
-        String[] splitInput = playerInput.split(",");
-        int x = Integer.parseInt(splitInput[0]);
-        int y = Integer.parseInt(splitInput[1]);
-        int[] intCoords = {x, y};
-        return intCoords;
-    }
+
 
     public void printMessage(String message){
         System.out.println(message);
