@@ -23,9 +23,27 @@ public class ConsoleView {
     private Game newGame;
     private String message;
 
-    public ConsoleView() {
+    enum GameState {
+        NewGame,
+        InProgress,
+        GameOver,
+    }
+
+    public ConsoleView(GameState state) {
         this.newGame = new Game();
         this.message = message;
+
+        state = GameState.NewGame;
+
+        switch(state){
+
+            case NewGame:
+                break;
+            case InProgress:
+                break;
+            case GameOver:
+                break;
+        }
     }
 
 //    asks game 'are we there yet?'
@@ -44,6 +62,10 @@ public class ConsoleView {
         int y = Integer.parseInt(splitInput[1]);
         int[] intCoords = {x, y};
         return intCoords;
+    }
+
+    public void printMessage(String message){
+        System.out.println(message);
     }
 //    submit coords to game
 //    (Game will check coordinates pertain to a legal move)
