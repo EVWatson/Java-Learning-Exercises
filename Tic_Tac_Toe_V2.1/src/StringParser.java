@@ -3,11 +3,12 @@ public class StringParser {
     private String coordinates;
 
     public StringParser(){
+
         this.coordinates = coordinates;
     }
 
 
-    private int[] parseStringCoordsToInt(String playerInput) {
+    public int[] parseStringCoordsToInt(String playerInput) {
         String[] splitInput = playerInput.split(",");
         int x = Integer.parseInt(splitInput[0]);
         int y = Integer.parseInt(splitInput[1]);
