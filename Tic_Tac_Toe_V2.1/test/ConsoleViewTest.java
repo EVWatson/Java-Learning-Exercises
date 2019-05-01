@@ -1,9 +1,9 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class ConsoleViewTest {
-
 
 
     @Test
@@ -18,5 +18,7 @@ public class ConsoleViewTest {
 
         cv.printMessage(ConsoleView.PROMPT_PLAYER_MESSAGE);
     }
+
+   
 
 }

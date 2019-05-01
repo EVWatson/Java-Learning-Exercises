@@ -32,6 +32,8 @@ public class Board {
         return newBoard;
     }
 
+//    TODO put in string parser. move the test as well
+
     public String getBoardStateAsString() {
         String formattedBoard = "";
         for (int row = 0; row < currentBoard.length; row++) {
@@ -49,10 +51,6 @@ public class Board {
         return formattedBoard;
     }
 
-//    private int convertInputToCoordinates(String userInput){
-////
-////
-////    }
 
     // TODO 1. Write tests to implement update a board space
     public void updateBoardSpace(int x, int y, String token) {

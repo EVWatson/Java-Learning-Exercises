@@ -23,6 +23,7 @@ public class ConsoleView {
     private String message;
 
     public ConsoleView() {
+
         this.message = message;
     }
 
@@ -37,10 +38,12 @@ public class ConsoleView {
     }
 
 
-
     public void printMessage(String message){
+
         System.out.println(message);
     }
+
+
 //    submit coords to game
 //    (Game will check coordinates pertain to a legal move)
     // print output
