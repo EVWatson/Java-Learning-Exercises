@@ -1,18 +1,24 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class ConsoleViewTest {
 
+
     @Test
-    public void parseStringCoordsToInt_givenCoordsAsString_ReturnsCoordsAsInts() {
+    public void printMessage_whenGivenConstantAndCalledFromConstructor_printsCorrectMessage(){
+        ConsoleView cv = new ConsoleView();
 
-        String givenCoords = "1,1";
+        String expectedResult = "Welcome to Tic Tac Toe!";
 
-        int[] expectedResult = {1,1};
+        String actualResult = ConsoleView.WELCOME_MESSAGE;
 
-        int[] actualResult = ConsoleView.parseStringCoordsToInt(givenCoords);
+        assertEquals(expectedResult, actualResult);
 
-        assertArrayEquals(expectedResult, actualResult);
+        cv.printMessage(ConsoleView.PROMPT_PLAYER_MESSAGE);
     }
+
+
+
 }

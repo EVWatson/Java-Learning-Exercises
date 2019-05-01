@@ -7,6 +7,7 @@ public class Game {
     private Player player1;
     private Player player2;
     private Player nextPlayer;
+    private ConsoleView message;
 
 
     public Game() {
@@ -17,16 +18,21 @@ public class Game {
         this.player1 = new Player("Alex", "X");
         this.player2 = new Player("Emily", "O");
         this.nextPlayer = this.player1;
+        this.message = new ConsoleView();
     }
 
+//    places player token
+
     public void applyMove (int x, int y){
+
         this.gameBoard.updateBoardSpace(x, y, this.nextPlayer.getToken());
     }
 
 //    move isBoardSpaceFree to Board
 
     public boolean isBoardSpaceFree(int x, int y){
-            return this.gameBoard.getBoardSpaceContents(x, y).equals( "*");
+
+        return this.gameBoard.getBoardSpaceContents(x, y).equals( "*");
     }
 
     public Integer getNumberOfMoves() {
@@ -40,6 +46,7 @@ public class Game {
     }
 
     public Player getWinner() {
+
         return winner;
     }
 

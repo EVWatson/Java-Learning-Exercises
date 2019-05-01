@@ -20,11 +20,10 @@ public class ConsoleView {
 //    initialise new game
 //    print starting board
 
-    private Game newGame;
     private String message;
 
     public ConsoleView() {
-        this.newGame = new Game();
+
         this.message = message;
     }
 
@@ -38,13 +37,13 @@ public class ConsoleView {
         return playerResponse;
     }
 
-    public static int[] parseStringCoordsToInt(String playerInput) {
-        String[] splitInput = playerInput.split(",");
-        int x = Integer.parseInt(splitInput[0]);
-        int y = Integer.parseInt(splitInput[1]);
-        int[] intCoords = {x, y};
-        return intCoords;
+
+    public void printMessage(String message){
+
+        System.out.println(message);
     }
+
+
 //    submit coords to game
 //    (Game will check coordinates pertain to a legal move)
     // print output
