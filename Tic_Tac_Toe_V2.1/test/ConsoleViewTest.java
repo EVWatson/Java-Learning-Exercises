@@ -19,6 +19,6 @@ public class ConsoleViewTest {
         cv.printMessage(ConsoleView.PROMPT_PLAYER_MESSAGE);
     }
 
-   
+
 
 }
