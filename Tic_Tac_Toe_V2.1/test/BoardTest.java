@@ -83,31 +83,7 @@ public class BoardTest {
     }
 
 
-    @Test
-    public void methodGetBoardStateAsString_whenGivenCurrentBoardObject_returnsAStringWithCorrectFormatting() {
 
-        Board currentBoard = new Board(3, 3);
-
-        String expectedResult = "* * *\n* * *\n* * *";
-
-        String actualResult = currentBoard.getBoardStateAsString();
-
-        System.out.println(actualResult);
-
-        assertEquals(expectedResult, actualResult);
-    }
-
-    @Test
-    public void methodGetBoardStateAsString_whenGivenCurrentBoardObjectOfAnySize_returnsAStringWithCorrectFormatting() {
-        Board currentBoard = new Board(3, 2);
-        String expectedResult = "* *\n* *\n* *";
-
-        String actualResult = currentBoard.getBoardStateAsString();
-
-        System.out.println(actualResult);
-
-        assertEquals(expectedResult, actualResult);
-    }
 
     @Test
     public void methodUpdateBoardSpace_whenGivenXAndYCoordinatesAndAToken_overwritesTheSymbolAtThatArrayIndexPosition() {
@@ -165,6 +141,28 @@ public class BoardTest {
 
 
         assertEquals(expectedResult, actualResult);
+    }
+
+//    TODO fix these tests:
+    @Test
+    public void isBoardSpaceFree_whenGivenCoordinates_returnsTrueWhenASpaceIsFree(){
+        Board currentBoard = new Board(3, 3);
+
+        boolean actualResult = currentBoard.isBoardSpaceFree(1,1);
+
+        assertTrue(actualResult);
+    }
+
+    @Test
+    public void isBoardSpaceFree_whenGivenCoordinates_returnsFalseWhenASpaceIsOccupiedByAPlayerToken(){
+
+        Board currentBoard = new Board(3, 3);
+
+        currentBoard.updateBoardSpace(1, 1, "X");
+
+        boolean actualResult = currentBoard.isBoardSpaceFree(1,1);
+
+        assertFalse(actualResult);
     }
 
 }

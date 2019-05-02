@@ -59,22 +59,6 @@ public class GameTest {
         assertEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
     }
 
-    @Test
-    public void isBoardSpaceFree_whenGivenCoordinates_returnsTrueWhenASpaceIsFree(){
 
-        boolean actualResult = game.isBoardSpaceFree(1,1);
-
-        assertTrue(actualResult);
-    }
-
-    @Test
-    public void isBoardSpaceFree_whenGivenCoordinates_returnsFalseWhenASpaceIsOccupiedByAPlayerToken(){
-
-        game.getGameBoard().updateBoardSpace(1, 1, "X");
-
-        boolean actualResult = game.isBoardSpaceFree(1,1);
-
-        assertFalse(actualResult);
-    }
 
 }

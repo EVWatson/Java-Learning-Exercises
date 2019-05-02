@@ -17,4 +17,30 @@ public class StringParserTest {
 
         assertArrayEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void methodGetBoardStateAsString_whenGivenCurrentBoardObject_returnsAStringWithCorrectFormatting() {
+
+        Board currentBoard = new Board(3, 3);
+
+        String expectedResult = "* * *\n* * *\n* * *";
+
+        String actualResult = currentBoard.getBoardStateAsString();
+
+        System.out.println(actualResult);
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void methodGetBoardStateAsString_whenGivenCurrentBoardObjectOfAnySize_returnsAStringWithCorrectFormatting() {
+        Board currentBoard = new Board(3, 2);
+        String expectedResult = "* *\n* *\n* *";
+
+        String actualResult = currentBoard.getBoardStateAsString();
+
+        System.out.println(actualResult);
+
+        assertEquals(expectedResult, actualResult);
+    }
 }

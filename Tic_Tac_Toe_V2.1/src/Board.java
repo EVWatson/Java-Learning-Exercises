@@ -32,36 +32,27 @@ public class Board {
         return newBoard;
     }
 
-//    TODO put in string parser. move the test as well
-
-    public String getBoardStateAsString() {
-        String formattedBoard = "";
-        for (int row = 0; row < currentBoard.length; row++) {
-            for (int column = 0; column < currentBoard[row].length; column++) {
-                if (column < currentBoard[row].length - 1) {
-                    formattedBoard = formattedBoard.concat(currentBoard[row][column] + " ");
-                } else {
-                    formattedBoard = formattedBoard.concat(currentBoard[row][column]);
-                }
-            }
-            if (row < currentBoard.length - 1) {
-                formattedBoard = formattedBoard + "\n";
-            }
-        }
-        return formattedBoard;
-    }
 
 
     // TODO 1. Write tests to implement update a board space
+
+//    why is update boardspace in board, but apply move is in game? aren't they the same thing?
     public void updateBoardSpace(int x, int y, String token) {
 
         currentBoard[x - 1][y - 1] = token;
     }
 
-
     public String getBoardSpaceContents(int x, int y) {
         return currentBoard[x-1][y-1];
     }
+
+    public boolean isBoardSpaceFree(int x, int y){
+
+        return getBoardSpaceContents(x, y).equals( "*");
+    }
+
+
+
 
     public int getTotalRows() {
         return totalRows;
