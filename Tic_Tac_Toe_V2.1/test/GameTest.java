@@ -56,7 +56,7 @@ public class GameTest {
 
         // Assert
         Board actualBoard = game.getGameBoard();
-        assertEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
+        assertArrayEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
     }
 
 

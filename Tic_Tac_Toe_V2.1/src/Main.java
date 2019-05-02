@@ -5,6 +5,9 @@ public class Main {
 //        board.getBoardStateAsString();
 //        board.updateBoardSpace(1,1,"x");
 //        board.getBoardStateAsString();
+
+
+        ConsoleView newGame = new ConsoleView();
     }
 
 }

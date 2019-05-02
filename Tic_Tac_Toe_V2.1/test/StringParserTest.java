@@ -22,10 +22,11 @@ public class StringParserTest {
     public void methodGetBoardStateAsString_whenGivenCurrentBoardObject_returnsAStringWithCorrectFormatting() {
 
         Board currentBoard = new Board(3, 3);
+        StringParser parseStrings = new StringParser();
 
         String expectedResult = "* * *\n* * *\n* * *";
 
-        String actualResult = currentBoard.getBoardStateAsString();
+        String actualResult = parseStrings.getBoardStateAsString();
 
         System.out.println(actualResult);
 
@@ -35,9 +36,11 @@ public class StringParserTest {
     @Test
     public void methodGetBoardStateAsString_whenGivenCurrentBoardObjectOfAnySize_returnsAStringWithCorrectFormatting() {
         Board currentBoard = new Board(3, 2);
+        StringParser parseStrings = new StringParser();
+
         String expectedResult = "* *\n* *\n* *";
 
-        String actualResult = currentBoard.getBoardStateAsString();
+        String actualResult = parseStrings.getBoardStateAsString();
 
         System.out.println(actualResult);
 

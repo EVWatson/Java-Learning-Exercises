@@ -31,10 +31,15 @@ public class ConsoleView {
 
     private String message;
 
+    private Game startGame;
+    private StringParser translate;
+
     public ConsoleView() {
 
         this.message = message;
         this.requestPlayerInput = promptPlayer();
+        this.startGame = new Game();
+        this.translate = new StringParser();
     }
 
 
@@ -58,6 +63,9 @@ public class ConsoleView {
         return ComputerResponse;
     }
 
+    public Game getStartGame() {
+        return startGame;
+    }
 }
 
     /*
