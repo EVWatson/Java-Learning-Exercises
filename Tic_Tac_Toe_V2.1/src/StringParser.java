@@ -1,10 +1,14 @@
 public class StringParser {
 
     private String coordinates;
+    private String currentBoardAsString;
+    private String[][] currentBoard;
 
     public StringParser(){
 
         this.coordinates = coordinates;
+        this.currentBoardAsString = getBoardStateAsString();
+
     }
 
 
@@ -20,7 +24,7 @@ public class StringParser {
 
     public String getBoardStateAsString() {
         String formattedBoard = "";
-        for (int row = 0; row < Board.getCurrentBoard.length; row++) {
+        for (int row = 0; row < currentBoard.length; row++) {
             for (int column = 0; column < currentBoard[row].length; column++) {
                 if (column < currentBoard[row].length - 1) {
                     formattedBoard = formattedBoard.concat(currentBoard[row][column] + " ");
