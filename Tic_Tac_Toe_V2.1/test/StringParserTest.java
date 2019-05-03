@@ -1,13 +1,24 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class StringParserTest {
 
+
+    private Game game;
+    private StringParser string;
+    private Board currentBoard;
+
+    @Before
+    public void setUp(){
+        this.game = new Game();
+        this.string = new StringParser();
+        this.currentBoard = new Board(3, 3);
+    }
+
     @Test
     public void parseStringCoordsToInt_givenCoordsAsString_ReturnsCoordsAsInts() {
-
-        StringParser string = new StringParser();
 
         String givenCoords = "1,1";
 
@@ -20,13 +31,11 @@ public class StringParserTest {
 
     @Test
     public void methodGetBoardStateAsString_whenGivenCurrentBoardObject_returnsAStringWithCorrectFormatting() {
-
-        Board currentBoard = new Board(3, 3);
-        StringParser parseStrings = new StringParser();
+        String[][] boardInPlay = currentBoard.getCurrentBoard();
 
         String expectedResult = "* * *\n* * *\n* * *";
 
-        String actualResult = parseStrings.getBoardStateAsString();
+        String actualResult = string.formatBoardAsString(boardInPlay);
 
         System.out.println(actualResult);
 
@@ -35,12 +44,12 @@ public class StringParserTest {
 
     @Test
     public void methodGetBoardStateAsString_whenGivenCurrentBoardObjectOfAnySize_returnsAStringWithCorrectFormatting() {
-        Board currentBoard = new Board(3, 2);
-        StringParser parseStrings = new StringParser();
 
-        String expectedResult = "* *\n* *\n* *";
+        String[][] boardInPlay = currentBoard.getCurrentBoard();
 
-        String actualResult = parseStrings.getBoardStateAsString();
+        String expectedResult = "* * *\n* * *\n* * *";
+
+        String actualResult = string.formatBoardAsString(boardInPlay);
 
         System.out.println(actualResult);
 

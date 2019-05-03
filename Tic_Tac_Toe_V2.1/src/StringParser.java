@@ -2,12 +2,12 @@ public class StringParser {
 
     private String coordinates;
     private String currentBoardAsString;
-    private String[][] currentBoard;
 
     public StringParser(){
 
         this.coordinates = coordinates;
-        this.currentBoardAsString = getBoardStateAsString();
+        this.currentBoardAsString = currentBoardAsString;
+
 
     }
 
@@ -22,7 +22,7 @@ public class StringParser {
 
 //    TODO fix this method now its been moved from Board
 
-    public String getBoardStateAsString() {
+    public String formatBoardAsString(String [][] currentBoard) {
         String formattedBoard = "";
         for (int row = 0; row < currentBoard.length; row++) {
             for (int column = 0; column < currentBoard[row].length; column++) {
@@ -39,4 +39,7 @@ public class StringParser {
         return formattedBoard;
     }
 
+    public String getCurrentBoardAsString() {
+        return currentBoardAsString;
+    }
 }
