@@ -69,7 +69,7 @@ public class ConsoleView {
 }
 
     /*
-    - sks game 'are we there yet?'
+    - asks game 'are we there yet?'
 
      -ask for player input
 
