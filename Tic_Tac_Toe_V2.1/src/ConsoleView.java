@@ -31,19 +31,24 @@ public class ConsoleView {
 
     private String message;
 
-    private Game startGame;
+    private Game theGame;
     private StringParser translate;
 
     public ConsoleView() {
-
-        this.message = message;
+        printMessage(WELCOME_MESSAGE);
         this.requestPlayerInput = promptPlayer();
-        this.startGame = new Game();
+        this.theGame = new Game();
         this.translate = new StringParser();
+        /// Something else should do this logic and return a string for consoleView to print without any specific game logic
+        Board theBoard = this.theGame.getGameBoard();
+        String stringBoard = this.translate.formatBoardAsString(theBoard.getCurrentBoard());
+        System.out.println(stringBoard);
+        ///
     }
 
 
     private String promptPlayer() {
+        printMessage(PROMPT_PLAYER_MESSAGE);
         Scanner inputScanner = new Scanner(System.in);
         String playerResponse = inputScanner.nextLine();
         return playerResponse;
@@ -55,6 +60,12 @@ public class ConsoleView {
         System.out.println(message);
     }
 
+    public void printCurrentBoard(String currentBoard){
+        System.out.println(currentBoard);
+    }
+
+
+
     public String getRequestPlayerInput() {
         return requestPlayerInput;
     }
@@ -63,8 +74,8 @@ public class ConsoleView {
         return ComputerResponse;
     }
 
-    public Game getStartGame() {
-        return startGame;
+    public Game getTheGame() {
+        return theGame;
     }
 }
 

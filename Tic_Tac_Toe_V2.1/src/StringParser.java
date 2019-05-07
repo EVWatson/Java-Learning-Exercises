@@ -2,12 +2,15 @@ public class StringParser {
 
     private String coordinates;
     private String currentBoardAsString;
+    private Game game;
+    private Board board;
+    private String[][] currentBoard = board.getCurrentBoard();
+
+
 
     public StringParser(){
 
-        this.coordinates = coordinates;
-        this.currentBoardAsString = currentBoardAsString;
-
+        this.currentBoardAsString = formatBoardAsString(currentBoard);
 
     }
 

@@ -8,6 +8,7 @@ public class Main {
 
 
         ConsoleView newGame = new ConsoleView();
+
     }
 
 }
