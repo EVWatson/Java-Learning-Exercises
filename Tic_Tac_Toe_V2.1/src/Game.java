@@ -30,18 +30,14 @@ public class Game {
         } else {
             this.nextPlayer = this.player2;
         };
+        this.numberOfMoves += 1;
     }
 
-
-
-
     public Integer getNumberOfMoves() {
-
         return numberOfMoves;
     }
 
     public boolean getIsCompleted() {
-
         return isCompleted;
     }
 
