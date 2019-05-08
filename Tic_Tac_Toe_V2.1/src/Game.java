@@ -3,10 +3,10 @@ public class Game {
     private Integer numberOfMoves;
     private boolean isCompleted;
     private Player winner;
-//    private Board gameBoard;
-//    private Player player1;
-//    private Player player2;
-//    private Player nextPlayer;
+    private Board gameBoard;
+    private Player player1;
+    private Player player2;
+    private Player nextPlayer;
 
 
 
@@ -14,21 +14,23 @@ public class Game {
         this.numberOfMoves = 0;
         this.isCompleted = false;
         this.winner = null;
-//        this.gameBoard = new Board(3, 3);
-//        this.player1 = new Player("Player1", "X");
-//        this.player2 = new Player("Player2", "O");
-//        this.nextPlayer = this.player1;
+        this.gameBoard = new Board(3, 3);
+        this.player1 = new Player("Player1", "X");
+        this.player2 = new Player("Player2", "O");
+        this.nextPlayer = this.player1;
 
     }
 
 //    places player token
 
-//    public void applyMove (int x, int y){
-//
-//        this.gameBoard.updateBoardSpace(x, y, this.nextPlayer.getToken());
-//    }
-
-
+    public void applyMove (int x, int y){
+        this.gameBoard.updateBoardSpace(x, y, this.nextPlayer.getToken());
+        if(this.nextPlayer == this.player2){
+            this.nextPlayer = this.player1;
+        } else {
+            this.nextPlayer = this.player2;
+        };
+    }
 
 
 
@@ -48,23 +50,23 @@ public class Game {
         return winner;
     }
 
-//    public Board getGameBoard() {
-//
-//        return gameBoard;
-//    }
-//
-//    public Player getPlayer1() {
-//
-//        return player1;
-//    }
-//
-//    public Player getPlayer2() {
-//
-//        return player2;
-//    }
-//
-//    public Player getNextPlayer() {
-//
-//        return this.nextPlayer;
-//    }
+    public Board getGameBoard() {
+
+        return gameBoard;
+    }
+
+    public Player getPlayer1() {
+
+        return player1;
+    }
+
+    public Player getPlayer2() {
+
+        return player2;
+    }
+
+    public Player getNextPlayer() {
+
+        return this.nextPlayer;
+    }
 }
