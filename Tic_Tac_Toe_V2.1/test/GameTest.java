@@ -42,22 +42,22 @@ public class GameTest {
     }
 
 
-    @Test
-    public void applyMove_whenGivenCoordinates_shouldUpdateGameBoardAtThatPositionWithTheNextPlayerToken() {
-        // Arrange
-//        Player nextPlayer = game.getNextPlayer();
-        String nextPlayerToken = game.getNextPlayer().getToken();
-
-        Board expectedBoard = new Board(3,3);
-        expectedBoard.updateBoardSpace(1,1, nextPlayerToken);
-
-        // Act
-        game.applyMove(1, 1);
-
-        // Assert
-        Board actualBoard = game.getGameBoard();
-        assertArrayEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
-    }
+//    @Test
+//    public void applyMove_whenGivenCoordinates_shouldUpdateGameBoardAtThatPositionWithTheNextPlayerToken() {
+//        // Arrange
+////        Player nextPlayer = game.getNextPlayer();
+//        String nextPlayerToken = game.getNextPlayer().getToken();
+//
+//        Board expectedBoard = new Board(3,3);
+//        expectedBoard.updateBoardSpace(1,1, nextPlayerToken);
+//
+//        // Act
+//        game.applyMove(1, 1);
+//
+//        // Assert
+//        Board actualBoard = game.getGameBoard();
+//        assertArrayEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
+//    }
 
 
 

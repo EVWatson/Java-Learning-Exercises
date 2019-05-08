@@ -1,16 +1,10 @@
 public class StringParser {
 
-    private String coordinates;
-    private String currentBoardAsString;
-    private Game game;
-    private Board board;
-    private String[][] currentBoard = board.getCurrentBoard();
 
-
+    private String returnStringValue;
+    private int returnIntValue;
 
     public StringParser(){
-
-        this.currentBoardAsString = formatBoardAsString(currentBoard);
 
     }
 
@@ -42,7 +36,4 @@ public class StringParser {
         return formattedBoard;
     }
 
-    public String getCurrentBoardAsString() {
-        return currentBoardAsString;
-    }
 }

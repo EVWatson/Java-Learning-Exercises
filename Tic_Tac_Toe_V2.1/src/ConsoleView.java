@@ -9,14 +9,15 @@ import java.util.Scanner;
 
 public class ConsoleView {
 
-    final static String WELCOME_MESSAGE = "Welcome to Tic Tac Toe!";
-    final static String BOARD_STATE_MESSAGE = "Here is the current board: ";
+    final static String WELCOME_MESSAGE = "Welcome to Tic Tac Toe!\n";
+    final static String BOARD_STATE_MESSAGE = "Here is the current board: \n";
 
     //    edit to specify player and their token:
-    final static String PROMPT_PLAYER_MESSAGE = "Please enter coordinates 'x,y' to place your token, or 'q' to give up: ";
+    private static String playerName = "";
+    final static String PROMPT_PLAYER_MESSAGE = String.format("%s, please enter coordinates 'x,y' to place your token, or 'q' to give up: \n", playerName);
 
-    final static String MOVE_ACCEPTED_MESSAGE = "Move accepted, here is the current board: ";
-    final static String INVALID_MOVE_MESSAGE = "That space is already taken! Please try again: ";
+    final static String MOVE_ACCEPTED_MESSAGE = "Move accepted, here is the current board: \n";
+    final static String INVALID_MOVE_MESSAGE = "That space is already taken! Please try again: \n";
 
     //    edit to specify player
     final static String WINNER_WINNER_CHICKEN_DINNER_MESSAGE = "Congratulations! You won!";
@@ -24,30 +25,29 @@ public class ConsoleView {
     final static String GAME_FORFETIED_MESSAGE = "Quitters never win.";
 
 
-    private String requestPlayerInput;
-    private String ComputerResponse;
+//    private String requestPlayerInput;
+//    private String ComputerResponse;
 
 //does computerResponse need to be in the constructor?
 
     private String message;
 
-    private Game theGame;
-    private StringParser translate;
+//    private Game theGame;
+//    private StringParser translate;
 
     public ConsoleView() {
-        printMessage(WELCOME_MESSAGE);
-        this.requestPlayerInput = promptPlayer();
-        this.theGame = new Game();
-        this.translate = new StringParser();
+//        this.requestPlayerInput = promptPlayer();
+//        this.theGame = new Game();
+//        this.translate = new StringParser();
         /// Something else should do this logic and return a string for consoleView to print without any specific game logic
-        Board theBoard = this.theGame.getGameBoard();
-        String stringBoard = this.translate.formatBoardAsString(theBoard.getCurrentBoard());
-        System.out.println(stringBoard);
+//        Board theBoard = this.theGame.getGameBoard();
+//        String stringBoard = this.translate.formatBoardAsString(theBoard.getCurrentBoard());
+//        System.out.println(stringBoard);
         ///
     }
 
 
-    private String promptPlayer() {
+    public String promptPlayer() {
         printMessage(PROMPT_PLAYER_MESSAGE);
         Scanner inputScanner = new Scanner(System.in);
         String playerResponse = inputScanner.nextLine();
@@ -61,22 +61,22 @@ public class ConsoleView {
     }
 
     public void printCurrentBoard(String currentBoard){
-        System.out.println(currentBoard);
+        System.out.println(currentBoard + "\n");
     }
 
 
+//
+//    public String getRequestPlayerInput() {
+//        return requestPlayerInput;
+//    }
+//
+//    public String getComputerResponse() {
+//        return ComputerResponse;
+//    }
 
-    public String getRequestPlayerInput() {
-        return requestPlayerInput;
-    }
-
-    public String getComputerResponse() {
-        return ComputerResponse;
-    }
-
-    public Game getTheGame() {
-        return theGame;
-    }
+//    public Game getTheGame() {
+//        return theGame;
+//    }
 }
 
     /*

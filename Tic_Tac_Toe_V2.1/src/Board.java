@@ -7,22 +7,14 @@ public class Board {
     private int totalRows;
     private int totalColumns;
 
-    private String boardAsString;
-    private StringParser translate;
-//    private String contentsOfBoardSpace;
-
     public Board(int totalRows, int totalColumns) {
         this.totalRows = totalRows;
         this.totalColumns = totalColumns;
         // create board and assign to currentBoard
         this.currentBoard = createBoard(totalRows, totalColumns);
 
-        this.boardAsString = translate.formatBoardAsString(currentBoard);
-//        this.contentsOfBoardSpace = ;
-
     }
 
-//    made createBoard public in order to test it
 
     private String[][] createBoard(int rowSize, int columnSize) {
         String[][] newBoard = new String[rowSize][columnSize];
