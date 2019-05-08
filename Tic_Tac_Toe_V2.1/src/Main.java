@@ -29,14 +29,26 @@ public class Main {
 
 
 
-        int turns = 8;
+//        this loop logic could go into consoleView?
 
-        for (int i = 0; i <= turns; i ++) {
-            String playerInput = screen.promptPlayer();
+        int turns = 9;
+        String currentPlayer;
+        String currentPlayerToken;
+
+        for (int i = 1; i <= turns; i ++) {
+            if (i % 2 == 0){
+                 currentPlayer = P2.getName();
+                 currentPlayerToken = P2.getToken();
+            } else {
+                currentPlayer = P1.getName();
+                currentPlayerToken = P1.getToken();
+            }
+
+            String playerInput = screen.promptPlayer(currentPlayer);
 
             int[] coords =  translateStrings.parseStringCoordsToInt(playerInput);
 
-            theBoard.updateBoardSpace(coords[0], coords[1], P1.getToken());
+            theBoard.updateBoardSpace(coords[0], coords[1], currentPlayerToken);
 
             screen.printMessage(ConsoleView.MOVE_ACCEPTED_MESSAGE);
 

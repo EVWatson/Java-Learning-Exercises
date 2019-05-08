@@ -13,8 +13,7 @@ public class ConsoleView {
     final static String BOARD_STATE_MESSAGE = "Here is the current board: \n";
 
     //    edit to specify player and their token:
-    private static String playerName = "";
-    final static String PROMPT_PLAYER_MESSAGE = String.format("%s, please enter coordinates 'x,y' to place your token, or 'q' to give up: \n", playerName);
+    final static String PROMPT_PLAYER_MESSAGE = (", please enter coordinates 'x,y' to place your token, or 'q' to give up: \n");
 
     final static String MOVE_ACCEPTED_MESSAGE = "Move accepted, here is the current board: \n";
     final static String INVALID_MOVE_MESSAGE = "That space is already taken! Please try again: \n";
@@ -47,8 +46,8 @@ public class ConsoleView {
     }
 
 
-    public String promptPlayer() {
-        printMessage(PROMPT_PLAYER_MESSAGE);
+    public String promptPlayer(String currentPlayer) {
+        printMessage(currentPlayer + PROMPT_PLAYER_MESSAGE);
         Scanner inputScanner = new Scanner(System.in);
         String playerResponse = inputScanner.nextLine();
         return playerResponse;
