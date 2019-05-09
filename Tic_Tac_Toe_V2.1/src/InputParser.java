@@ -1,10 +1,10 @@
-public class StringParser {
+public class InputParser {
 
 
     private String returnStringValue;
     private int returnIntValue;
 
-    public StringParser(){
+    public InputParser(){
 
     }
 

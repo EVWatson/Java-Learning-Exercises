@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,12 +13,12 @@ public class GameTest {
         this.game = new Game();
     }
 
-    @Test
-    public void gameClass_whenInstanciated_numberOfMovesIsZero() {
-        Integer actual = game.getNumberOfMoves();
-        Integer expected = 0;
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    public void gameClass_whenInstanciated_numberOfMovesIsZero() {
+//        Integer actual = game.getNumberOfMoves();
+//        Integer expected = 0;
+//        assertEquals(expected, actual);
+//    }
 
     @Test
     public void gameClass_whenInstanciated_nextTurnIsAPlayer() {
@@ -29,7 +30,7 @@ public class GameTest {
 
     @Test
     public void gameClass_whenInstanciated_isCompletedIsFalse() {
-        boolean actual = game.getIsCompleted();
+        boolean actual = game.isGameComplete();
         boolean expected = false;
         assertEquals(expected, actual);
     }
@@ -57,6 +58,25 @@ public class GameTest {
         // Assert
         Board actualBoard = game.getGameBoard();
         assertArrayEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
+    }
+
+    @Test
+    public void isGameCompleteReturnsTrueWhenNoMoreMovesArePossible(){
+
+        game.applyMove(1,1);
+        game.applyMove(1,2);
+        game.applyMove(1,3);
+        game.applyMove(2,1);
+        game.applyMove(2,2);
+        game.applyMove(2,3);
+        game.applyMove(3,1);
+        game.applyMove(3,2);
+        game.applyMove(3,3);
+
+        Boolean actualResult = game.isGameComplete();
+
+        assertTrue(actualResult);
+
     }
 
 

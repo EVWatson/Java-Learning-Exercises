@@ -6,7 +6,7 @@ public class Main {
 
         Game playTTT = new Game();
 
-        StringParser translateStrings = new StringParser();
+        InputParser translateStrings = new InputParser();
 
 
 
@@ -23,7 +23,7 @@ public class Main {
 
         String currentPlayerName;
 
-        while (playTTT.getNumberOfMoves() < 2) {
+        while (playTTT.isGameComplete()) {
             currentPlayerName = playTTT.getNextPlayer().getName();
             String playerInput = screen.promptPlayer(currentPlayerName);
 
@@ -34,8 +34,9 @@ public class Main {
             screen.printMessage(ConsoleView.MOVE_ACCEPTED_MESSAGE);
 
             screen.printCurrentBoard(translateStrings.formatBoardAsString(playTTT.getGameBoard().getCurrentBoard()));
-
         }
+
+        //
 
     }
 

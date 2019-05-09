@@ -40,6 +40,7 @@ public class Board {
     }
 
     public String getBoardSpaceContents(int x, int y) {
+
         return currentBoard[x-1][y-1];
     }
 
@@ -49,9 +50,18 @@ public class Board {
     }
 
 
+    public String[] getRowContents (String[][] currentBoard){
+        String[] rowContents = {};
+        for (int row = 0; row < currentBoard.length; row++){
+            rowContents = currentBoard[row];
+        }
+        return rowContents;
+    }
+
 
 
     public int getTotalRows() {
+
         return totalRows;
     }
 

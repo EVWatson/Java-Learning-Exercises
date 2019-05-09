@@ -32,12 +32,12 @@ public class ConsoleView {
     private String message;
 
 //    private Game theGame;
-//    private StringParser translate;
+//    private InputParser translate;
 
     public ConsoleView() {
 //        this.requestPlayerInput = promptPlayer();
 //        this.theGame = new Game();
-//        this.translate = new StringParser();
+//        this.translate = new InputParser();
         /// Something else should do this logic and return a string for consoleView to print without any specific game logic
 //        Board theBoard = this.theGame.getGameBoard();
 //        String stringBoard = this.translate.formatBoardAsString(theBoard.getCurrentBoard());

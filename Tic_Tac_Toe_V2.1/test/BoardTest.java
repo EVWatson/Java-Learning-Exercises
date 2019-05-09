@@ -1,5 +1,6 @@
 //import org.junit.Before;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -7,12 +8,12 @@ import static org.junit.Assert.*;
 
 public class BoardTest {
 
-//    private Board currentBoard;
-//
-//    @Before
-//    public void setUp(){
-//
-//    }
+    private Game game;
+
+    @Before
+    public void setUp(){
+        this.game = new Game();
+    }
 
     @Test
     public void methodGetRows_whenGivenANumber_returnsThatNumberOfRows() {
@@ -163,6 +164,20 @@ public class BoardTest {
         boolean actualResult = currentBoard.isBoardSpaceFree(1,1);
 
         assertFalse(actualResult);
+    }
+
+    @Test
+    public void getRowContentsReturnsGameBoardRowAsAnArray(){
+        Board currentBoard = new Board(3, 3);
+
+        String[] expectedResult = {"*", "*", "*"};
+
+        String[] actualResult = currentBoard.getRowContents(currentBoard.getCurrentBoard());
+
+
+       
+
+        assertArrayEquals(expectedResult, actualResult);
     }
 
 }

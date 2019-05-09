@@ -3,17 +3,17 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class StringParserTest {
+public class InputParserTest {
 
 
     private Game game;
-    private StringParser string;
+    private InputParser string;
     private Board currentBoard;
 
     @Before
     public void setUp(){
         this.game = new Game();
-        this.string = new StringParser();
+        this.string = new InputParser();
         this.currentBoard = new Board(3, 3);
     }
 
