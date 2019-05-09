@@ -3,6 +3,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.StringJoiner;
+
 import static org.junit.Assert.*;
 
 
@@ -11,7 +13,7 @@ public class BoardTest {
     private Game game;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         this.game = new Game();
     }
 
@@ -84,8 +86,6 @@ public class BoardTest {
     }
 
 
-
-
     @Test
     public void methodUpdateBoardSpace_whenGivenXAndYCoordinatesAndAToken_overwritesTheSymbolAtThatArrayIndexPosition() {
         Board currentBoard = new Board(3, 3);
@@ -144,40 +144,39 @@ public class BoardTest {
         assertEquals(expectedResult, actualResult);
     }
 
-//    TODO fix these tests:
+    //    TODO fix these tests:
     @Test
-    public void isBoardSpaceFree_whenGivenCoordinates_returnsTrueWhenASpaceIsFree(){
+    public void isBoardSpaceFree_whenGivenCoordinates_returnsTrueWhenASpaceIsFree() {
         Board currentBoard = new Board(3, 3);
 
-        boolean actualResult = currentBoard.isBoardSpaceFree(1,1);
+        boolean actualResult = currentBoard.isBoardSpaceFree(1, 1);
 
         assertTrue(actualResult);
     }
 
     @Test
-    public void isBoardSpaceFree_whenGivenCoordinates_returnsFalseWhenASpaceIsOccupiedByAPlayerToken(){
+    public void isBoardSpaceFree_whenGivenCoordinates_returnsFalseWhenASpaceIsOccupiedByAPlayerToken() {
 
         Board currentBoard = new Board(3, 3);
 
         currentBoard.updateBoardSpace(1, 1, "X");
 
-        boolean actualResult = currentBoard.isBoardSpaceFree(1,1);
+        boolean actualResult = currentBoard.isBoardSpaceFree(1, 1);
 
         assertFalse(actualResult);
     }
 
+    //    currently getting one row, needs to get all rows. perhaps needs nested array?
     @Test
-    public void getRowContentsReturnsGameBoardRowAsAnArray(){
+    public void getRowContentsReturnsGameBoardRowAsAString() {
         Board currentBoard = new Board(3, 3);
 
-        String[] expectedResult = {"*", "*", "*"};
+        String expectedResult = "*********";
 
-        String[] actualResult = currentBoard.getRowContents(currentBoard.getCurrentBoard());
+        String actualResult = currentBoard.getAllRows(currentBoard.getCurrentBoard());
 
+        assertEquals(expectedResult, actualResult);
 
-       
-
-        assertArrayEquals(expectedResult, actualResult);
     }
 
 }

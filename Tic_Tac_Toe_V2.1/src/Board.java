@@ -50,12 +50,15 @@ public class Board {
     }
 
 
-    public String[] getRowContents (String[][] currentBoard){
-        String[] rowContents = {};
-        for (int row = 0; row < currentBoard.length; row++){
-            rowContents = currentBoard[row];
-        }
-        return rowContents;
+//    this method is probably superfluous
+    public String getAllRows(String[][] currentBoard){
+        String row1 = currentBoard[0][0] + currentBoard[0][1] + currentBoard[0][2];
+        String row2 = currentBoard[1][0] + currentBoard[1][1] + currentBoard[1][2];
+        String row3 = currentBoard[2][0] + currentBoard[2][1] + currentBoard[2][2];
+
+        String allRows = row1 + row2 + row3;
+
+        return allRows;
     }
 
 
