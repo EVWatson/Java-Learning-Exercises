@@ -19,6 +19,8 @@ public class Game {
         this.player2 = new Player("Player2", "O");
         this.nextPlayer = this.player1;
 
+//        nextplayer is confusing when you need the 'current player'
+
     }
 
 //    places player token
@@ -56,6 +58,10 @@ public class Game {
     }
 
     public boolean hasPlayerWon() {
+
+        if(checkAllRows(player1.getToken()) || checkAllRows(player2.getToken())){
+            return true;
+        }
 //        if(player has won){
 //        return true;
 //    }
@@ -64,7 +70,41 @@ public class Game {
     }
 
 
-        /*
+    private boolean checkAllRows(String token){
+        String[][] currentBoard = this.gameBoard.getCurrentBoard();
+        if (currentBoard[0][0].equals(token) && currentBoard[0][1].equals(token) && currentBoard[0][2].equals(token)) {
+            return true;
+        } else if (currentBoard[1][0].equals(token) && currentBoard[1][1].equals(token) && currentBoard[1][2].equals(token)) {
+            return true;
+        } else if (currentBoard[2][0].equals(token) && currentBoard[2][1].equals(token) && currentBoard[2][2].equals(token)) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean checkAllColumns(){
+        String[][] currentBoard = this.gameBoard.getCurrentBoard();
+        if (currentBoard[0][0].equals(this.nextPlayer.getToken()) && currentBoard[1][0].equals(this.nextPlayer.getToken()) && currentBoard[2][0].equals(this.nextPlayer.getToken())) {
+            return true;
+        } else if (currentBoard[0][1].equals(this.nextPlayer.getToken()) && currentBoard[1][1].equals(this.nextPlayer.getToken()) && currentBoard[2][1].equals(this.nextPlayer.getToken())) {
+            return true;
+        } else if (currentBoard[1][2].equals(this.nextPlayer.getToken()) && currentBoard[1][2].equals(this.nextPlayer.getToken()) && currentBoard[2][2].equals(this.nextPlayer.getToken())) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean checkAllDiagonals(){
+        String[][] currentBoard = this.gameBoard.getCurrentBoard();
+        if (currentBoard[0][0].equals(this.nextPlayer.getToken()) && currentBoard[1][1].equals(this.nextPlayer.getToken()) && currentBoard[2][2].equals(this.nextPlayer.getToken())) {
+            return true;
+        }else if (currentBoard[0][2].equals(this.nextPlayer.getToken()) && currentBoard[1][1].equals(this.nextPlayer.getToken()) && currentBoard[2][0].equals(this.nextPlayer.getToken())) {
+            return true;
+        }
+        return false;
+    }
+
+    /*
         wincheck:
         - get current board, if no rows/columns/diagonals of three of the same token exist, game continues
         - if there are still free spaces, game continues

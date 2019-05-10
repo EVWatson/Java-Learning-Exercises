@@ -79,6 +79,49 @@ public class GameTest {
 
     }
 
+    @Test
+    public void hasPlayerWonChecksWinForAllRows(){
+
+//        game.getGameBoard().getCurrentBoard();
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertFalse(actualResult);
+    }
+
+    @Test
+    public void hasPlayerWonIsTrueWhenAPlayerHasThreeTokensInARow(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(1,2);
+        game.applyMove(2,2);
+        game.applyMove(1,3);
+
+//        game.getGameBoard().updateBoardSpace(1,1,"X");
+//        game.getGameBoard().updateBoardSpace(1,2, "X");
+//        game.getGameBoard().updateBoardSpace(1,3, "X");
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertTrue(actualResult);
+    }
+
+    @Test
+    public void hasPlayerWonIsFalseWhenAPlayerDoesNotHaveThreeTokensInARow(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(1,2);
+        game.applyMove(2,2);
+        game.applyMove(2,3);
+
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertFalse(actualResult);
+    }
+
 
 
 }
