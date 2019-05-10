@@ -61,11 +61,11 @@ public class Game {
 
         if(checkAllRows(player1.getToken()) || checkAllRows(player2.getToken())){
             return true;
+        } if(checkAllColumns(player1.getToken()) || checkAllColumns(player2.getToken())){
+            return true;
+        } if (checkAllDiagonals(player1.getToken()) || checkAllDiagonals(player2.getToken())) {
+            return true;
         }
-//        if(player has won){
-//        return true;
-//    }
-
         return false;
     }
 
@@ -82,23 +82,23 @@ public class Game {
         return false;
     }
 
-    private boolean checkAllColumns(){
+    private boolean checkAllColumns(String token){
         String[][] currentBoard = this.gameBoard.getCurrentBoard();
-        if (currentBoard[0][0].equals(this.nextPlayer.getToken()) && currentBoard[1][0].equals(this.nextPlayer.getToken()) && currentBoard[2][0].equals(this.nextPlayer.getToken())) {
+        if (currentBoard[0][0].equals(token) && currentBoard[1][0].equals(token) && currentBoard[2][0].equals(token)) {
             return true;
-        } else if (currentBoard[0][1].equals(this.nextPlayer.getToken()) && currentBoard[1][1].equals(this.nextPlayer.getToken()) && currentBoard[2][1].equals(this.nextPlayer.getToken())) {
+        } else if (currentBoard[0][1].equals(token) && currentBoard[1][1].equals(token) && currentBoard[2][1].equals(token)) {
             return true;
-        } else if (currentBoard[1][2].equals(this.nextPlayer.getToken()) && currentBoard[1][2].equals(this.nextPlayer.getToken()) && currentBoard[2][2].equals(this.nextPlayer.getToken())) {
+        } else if (currentBoard[0][2].equals(token) && currentBoard[1][2].equals(token) && currentBoard[2][2].equals(token)) {
             return true;
         }
         return false;
     }
 
-    private boolean checkAllDiagonals(){
+    private boolean checkAllDiagonals(String token){
         String[][] currentBoard = this.gameBoard.getCurrentBoard();
-        if (currentBoard[0][0].equals(this.nextPlayer.getToken()) && currentBoard[1][1].equals(this.nextPlayer.getToken()) && currentBoard[2][2].equals(this.nextPlayer.getToken())) {
+        if (currentBoard[0][0].equals(token) && currentBoard[1][1].equals(token) && currentBoard[2][2].equals(token)) {
             return true;
-        }else if (currentBoard[0][2].equals(this.nextPlayer.getToken()) && currentBoard[1][1].equals(this.nextPlayer.getToken()) && currentBoard[2][0].equals(this.nextPlayer.getToken())) {
+        }else if (currentBoard[0][2].equals(token) && currentBoard[1][1].equals(token) && currentBoard[2][0].equals(token)) {
             return true;
         }
         return false;

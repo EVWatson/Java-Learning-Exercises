@@ -122,6 +122,68 @@ public class GameTest {
         assertFalse(actualResult);
     }
 
+    @Test
+    public void hasPlayerWonIsTrueWhenAPlayerHasThreeTokensInAColumn(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(2,1);
+        game.applyMove(2,2);
+        game.applyMove(3,1);
+
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertTrue(actualResult);
+    }
+
+    @Test
+    public void hasPlayerWonIsFalseWhenAPlayerDoesNotHaveThreeTokensInColumn(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(1,2);
+        game.applyMove(2,2);
+        game.applyMove(2,3);
+
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertFalse(actualResult);
+    }
+
+    @Test
+    public void hasPlayerWonIsTrueWhenAPlayerHasThreeTokensInADiagonal(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(2,2);
+        game.applyMove(2,1);
+        game.applyMove(3,3);
+
+//        game.getGameBoard().updateBoardSpace(1,1,"X");
+//        game.getGameBoard().updateBoardSpace(1,2, "X");
+//        game.getGameBoard().updateBoardSpace(1,3, "X");
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertTrue(actualResult);
+    }
+
+    @Test
+    public void hasPlayerWonIsFalseWhenAPlayerDoesNotHaveThreeTokensInADiagonal(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(1,2);
+        game.applyMove(2,2);
+        game.applyMove(2,3);
+
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertFalse(actualResult);
+    }
 
 
 }
