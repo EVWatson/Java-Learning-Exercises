@@ -45,7 +45,9 @@ public class Game {
 
 //    rename to 'should game continue'?
     public boolean isGameComplete() {
-        if(this.numberOfMoves == 9){
+        if(this.hasPlayerWon()){
+            return true;
+        } if(this.numberOfMoves == 9){
             return true;
         }
 //        if (this.winner != null) {

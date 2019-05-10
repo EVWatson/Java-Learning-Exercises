@@ -31,6 +31,8 @@ public class Main {
 
             playTTT.applyMove(coords[0], coords[1]);
 
+            playTTT.isGameComplete();
+
             screen.printMessage(ConsoleView.MOVE_ACCEPTED_MESSAGE);
 
             screen.printCurrentBoard(translateStrings.formatBoardAsString(playTTT.getGameBoard().getCurrentBoard()));
