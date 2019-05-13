@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 
 public class ConsoleViewTest {
 
+//    when run, test just keeps running and never does anything else
+
 
     @Test
     public void printMessage_whenGivenConstantAndCalledFromConstructor_printsCorrectMessage(){

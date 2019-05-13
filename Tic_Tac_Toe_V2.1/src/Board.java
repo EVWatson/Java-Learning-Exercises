@@ -6,18 +6,15 @@ public class Board {
 
     private int totalRows;
     private int totalColumns;
-//    private String contentsOfBoardSpace;
 
     public Board(int totalRows, int totalColumns) {
         this.totalRows = totalRows;
         this.totalColumns = totalColumns;
         // create board and assign to currentBoard
         this.currentBoard = createBoard(totalRows, totalColumns);
-//        this.contentsOfBoardSpace = ;
 
     }
 
-//    made createBoard public in order to test it
 
     private String[][] createBoard(int rowSize, int columnSize) {
         String[][] newBoard = new String[rowSize][columnSize];
@@ -32,38 +29,42 @@ public class Board {
         return newBoard;
     }
 
-//    TODO put in string parser. move the test as well
-
-    public String getBoardStateAsString() {
-        String formattedBoard = "";
-        for (int row = 0; row < currentBoard.length; row++) {
-            for (int column = 0; column < currentBoard[row].length; column++) {
-                if (column < currentBoard[row].length - 1) {
-                    formattedBoard = formattedBoard.concat(currentBoard[row][column] + " ");
-                } else {
-                    formattedBoard = formattedBoard.concat(currentBoard[row][column]);
-                }
-            }
-            if (row < currentBoard.length - 1) {
-                formattedBoard = formattedBoard + "\n";
-            }
-        }
-        return formattedBoard;
-    }
 
 
     // TODO 1. Write tests to implement update a board space
+
+//    why is update boardspace in board, but apply move is in game? aren't they the same thing?
     public void updateBoardSpace(int x, int y, String token) {
 
         currentBoard[x - 1][y - 1] = token;
     }
 
-
     public String getBoardSpaceContents(int x, int y) {
+
         return currentBoard[x-1][y-1];
     }
 
+    public boolean isBoardSpaceFree(int x, int y){
+
+        return getBoardSpaceContents(x, y).equals( "*");
+    }
+
+
+//    this method is probably superfluous
+    public String getAllRows(String[][] currentBoard){
+        String row1 = currentBoard[0][0] + currentBoard[0][1] + currentBoard[0][2];
+        String row2 = currentBoard[1][0] + currentBoard[1][1] + currentBoard[1][2];
+        String row3 = currentBoard[2][0] + currentBoard[2][1] + currentBoard[2][2];
+
+        String allRows = row1 + row2 + row3;
+
+        return allRows;
+    }
+
+
+
     public int getTotalRows() {
+
         return totalRows;
     }
 

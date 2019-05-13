@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,24 +13,24 @@ public class GameTest {
         this.game = new Game();
     }
 
-    @Test
-    public void gameClass_whenInstanciated_numberOfMovesIsZero() {
-        Integer actual = game.getNumberOfMoves();
-        Integer expected = 0;
-        assertEquals(expected, actual);
-    }
-
 //    @Test
-//    public void gameClass_whenInstanciated_nextTurnIsAPlayer() {
-//        Game game = new Game();
-//         expected = game.getNextTurn();
-//         actual = ;
+//    public void gameClass_whenInstanciated_numberOfMovesIsZero() {
+//        Integer actual = game.getNumberOfMoves();
+//        Integer expected = 0;
 //        assertEquals(expected, actual);
 //    }
 
     @Test
+    public void gameClass_whenInstanciated_nextTurnIsAPlayer() {
+        Game game = new Game();
+        Player expected = new Player("player", "x");
+        Player actual = game.getNextPlayer() ;
+        assertEquals(expected.getClass(), actual.getClass());
+    }
+
+    @Test
     public void gameClass_whenInstanciated_isCompletedIsFalse() {
-        boolean actual = game.getIsCompleted();
+        boolean actual = game.isGameComplete();
         boolean expected = false;
         assertEquals(expected, actual);
     }
@@ -56,25 +57,133 @@ public class GameTest {
 
         // Assert
         Board actualBoard = game.getGameBoard();
-        assertEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
+        assertArrayEquals(expectedBoard.getCurrentBoard(), actualBoard.getCurrentBoard());
     }
 
     @Test
-    public void isBoardSpaceFree_whenGivenCoordinates_returnsTrueWhenASpaceIsFree(){
+    public void isGameCompleteReturnsTrueWhenNoMoreMovesArePossible(){
 
-        boolean actualResult = game.isBoardSpaceFree(1,1);
+        game.applyMove(1,1);
+        game.applyMove(1,2);
+        game.applyMove(1,3);
+        game.applyMove(2,1);
+        game.applyMove(2,2);
+        game.applyMove(2,3);
+        game.applyMove(3,1);
+        game.applyMove(3,2);
+        game.applyMove(3,3);
+
+        Boolean actualResult = game.isGameComplete();
+
+        assertTrue(actualResult);
+
+    }
+
+    @Test
+    public void hasPlayerWonChecksWinForAllRows(){
+
+//        game.getGameBoard().getCurrentBoard();
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertFalse(actualResult);
+    }
+
+    @Test
+    public void hasPlayerWonIsTrueWhenAPlayerHasThreeTokensInARow(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(1,2);
+        game.applyMove(2,2);
+        game.applyMove(1,3);
+
+//        game.getGameBoard().updateBoardSpace(1,1,"X");
+//        game.getGameBoard().updateBoardSpace(1,2, "X");
+//        game.getGameBoard().updateBoardSpace(1,3, "X");
+
+        Boolean actualResult = game.hasPlayerWon();
 
         assertTrue(actualResult);
     }
 
     @Test
-    public void isBoardSpaceFree_whenGivenCoordinates_returnsFalseWhenASpaceIsOccupiedByAPlayerToken(){
+    public void hasPlayerWonIsFalseWhenAPlayerDoesNotHaveThreeTokensInARow(){
 
-        game.getGameBoard().updateBoardSpace(1, 1, "X");
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(1,2);
+        game.applyMove(2,2);
+        game.applyMove(2,3);
 
-        boolean actualResult = game.isBoardSpaceFree(1,1);
+
+        Boolean actualResult = game.hasPlayerWon();
 
         assertFalse(actualResult);
     }
+
+    @Test
+    public void hasPlayerWonIsTrueWhenAPlayerHasThreeTokensInAColumn(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(2,1);
+        game.applyMove(2,2);
+        game.applyMove(3,1);
+
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertTrue(actualResult);
+    }
+
+    @Test
+    public void hasPlayerWonIsFalseWhenAPlayerDoesNotHaveThreeTokensInColumn(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(1,2);
+        game.applyMove(2,2);
+        game.applyMove(2,3);
+
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertFalse(actualResult);
+    }
+
+    @Test
+    public void hasPlayerWonIsTrueWhenAPlayerHasThreeTokensInADiagonal(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(2,2);
+        game.applyMove(2,1);
+        game.applyMove(3,3);
+
+//        game.getGameBoard().updateBoardSpace(1,1,"X");
+//        game.getGameBoard().updateBoardSpace(1,2, "X");
+//        game.getGameBoard().updateBoardSpace(1,3, "X");
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertTrue(actualResult);
+    }
+
+    @Test
+    public void hasPlayerWonIsFalseWhenAPlayerDoesNotHaveThreeTokensInADiagonal(){
+
+        game.applyMove(1,1);
+        game.applyMove(3,3);
+        game.applyMove(1,2);
+        game.applyMove(2,2);
+        game.applyMove(2,3);
+
+
+        Boolean actualResult = game.hasPlayerWon();
+
+        assertFalse(actualResult);
+    }
+
 
 }

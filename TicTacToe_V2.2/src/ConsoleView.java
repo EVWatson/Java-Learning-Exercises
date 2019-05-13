@@ -26,14 +26,17 @@ private String promptPlayer(){
 }
 
 private void printMessage(String message){
+
     System.out.println(message);
 }
 
     public String getRequestPlayerInput() {
-        return requestPlayerInput;
+
+    return requestPlayerInput;
     }
 
     public String getComputerResponse() {
-        return ComputerResponse;
+
+    return ComputerResponse;
     }
 }
